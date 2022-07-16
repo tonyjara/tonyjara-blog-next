@@ -1,14 +1,19 @@
-import { ChakraProvider } from '@chakra-ui/react'
+import '@fontsource/nunito';
 
-import theme from '../theme'
-import { AppProps } from 'next/app'
+import { ChakraProvider } from '@chakra-ui/react';
+
+import theme from '../theme';
+import { AppProps } from 'next/app';
+import NavbarLayout from '../layouts/NavbarLayout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <NavbarLayout>
+        <Component {...pageProps} />
+      </NavbarLayout>
     </ChakraProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;
