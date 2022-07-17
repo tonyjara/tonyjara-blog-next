@@ -9,6 +9,7 @@ import BlogBody from '../../components/Blog/blog-body';
 import { IPost } from '../../interfaces/post';
 import BlogHeader from '../../components/Blog/blog-header';
 import Footer from '../../components/Footer/Footer';
+import BlogMetaTags from '../../components/Meta/BlogMetaTags';
 
 type Props = {
   post: IPost;
@@ -23,6 +24,7 @@ export default function Post({ post, morePosts, preview }: Props) {
   }
   return (
     <>
+      <BlogMetaTags post={post} />
       <Flex p={{ base: 5, md: 2 }} justifyContent={'center'} mb={'80px'}>
         <Box maxW="800px">
           {/* <Header /> */}

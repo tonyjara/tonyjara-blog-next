@@ -3,7 +3,7 @@ title: 'Chakra-ui Drag-n-Drop for images'
 excerpt: 'Learn how to make a beautiful Drag-n-drop component for image upload.'
 coverImage: '/assets/birbs/federal.jpg'
 birbName: 'Scarlet-headed blackbird | Amblyramphus holosericeus'
-birbLink: 'https://ebird.org/species/grhowl'
+birbLink: 'https://ebird.org/species/schbla1/'
 tags: ['react', 'chakra-ui']
 date: 'Sat Jul 16 2022 14:37:22 GMT-0400 (Paraguay Standard Time)'
 author:

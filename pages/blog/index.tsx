@@ -2,6 +2,7 @@ import { Box, Center, Flex } from '@chakra-ui/react';
 import React from 'react';
 import BlogListComponent from '../../components/Blog/blog-list-card';
 import BlogSearchbar from '../../components/Blog/blog-searchbar';
+import Footer from '../../components/Footer/Footer';
 import { IPost } from '../../interfaces/post';
 import { getAllPosts } from '../../lib/api';
 
@@ -17,14 +18,17 @@ const BlogHome = ({ allPosts }: Props) => {
     { value: 'css', label: 'CSS' },
   ];
   return (
-    <Flex flexDirection="column" justifyContent="center">
-      <BlogSearchbar posts={allPosts} />
-      {allPosts.map((post) => (
-        <Box p={[5, 0]} key={post.slug}>
-          <BlogListComponent post={post} />
-        </Box>
-      ))}
-    </Flex>
+    <>
+      <Flex flexDirection="column" justifyContent="center">
+        <BlogSearchbar posts={allPosts} />
+        {allPosts.map((post) => (
+          <Box p={[5, 0]} key={post.slug}>
+            <BlogListComponent post={post} />
+          </Box>
+        ))}
+      </Flex>
+      <Footer />
+    </>
   );
 };
 

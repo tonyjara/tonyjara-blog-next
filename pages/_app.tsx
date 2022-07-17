@@ -1,5 +1,7 @@
 import '@fontsource/nunito';
 import '../styles/globals.css';
+// import 'highlight.js/styles/atom-one-dark.css';
+
 import NextNProgress from 'nextjs-progressbar';
 
 import { ChakraProvider } from '@chakra-ui/react';

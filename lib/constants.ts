@@ -7,3 +7,5 @@ export const socialMediaLinks = {
 };
 
 export const repoLink = 'https://github.com/tonyjara/tonyjara-blog-next';
+
+export const WEB_URL = 'https://tonyjara.com';

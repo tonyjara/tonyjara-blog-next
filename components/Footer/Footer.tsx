@@ -76,6 +76,7 @@ export default function Footer() {
             as={'a'}
             target="_blank"
             href={repoLink}
+            size="sm"
           >
             Clone this blog
           </Button>

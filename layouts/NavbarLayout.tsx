@@ -78,13 +78,15 @@ const NavbarLayout: React.FC<{ children: ReactElement | ReactElement[] }> = ({
             spacing={6}
             alignItems="center"
           >
-            <SocialMediaStrip />
+            <Box display={{ base: 'none', md: 'block' }}>
+              <SocialMediaStrip />
+            </Box>
             <DarkModeButton />
           </Stack>
         </Flex>
 
         <Collapse in={isOpen} animateOpacity>
-          <MobileNav />
+          <MobileNav onToggle={onToggle} />
         </Collapse>
       </Box>
       <Box pt={'65px'}>{children}</Box>

@@ -14,9 +14,7 @@ import {
 import Link from 'next/link';
 import { NavItem, NAV_ITEMS } from './NavbarData';
 
-export const MobileNav = () => {
-  const { colorMode, toggleColorMode } = useColorMode();
-
+export const MobileNav = ({ onToggle }: { onToggle: () => void }) => {
   return (
     <Stack
       bg={useColorModeValue('white', 'gray.800')}
@@ -24,18 +22,18 @@ export const MobileNav = () => {
       display={{ md: 'none' }}
     >
       {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
+        <MobileNavItem key={navItem.label} {...navItem} onToggle={onToggle} />
       ))}
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
+const MobileNavItem = ({ label, children, href, onToggle }: NavItem) => {
+  const { isOpen } = useDisclosure();
 
   return (
-    <Link href={href ?? '/'}>
-      <Stack spacing={4} onClick={children && onToggle}>
+    <Stack onClick={onToggle}>
+      <Link href={href ?? '/'}>
         <Flex
           py={2}
           // as={ChackraLink}
@@ -62,29 +60,25 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             />
           )}
         </Flex>
+      </Link>
 
-        <Collapse
-          in={isOpen}
-          animateOpacity
-          style={{ marginTop: '0!important' }}
+      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
+        <Stack
+          mt={2}
+          pl={4}
+          borderLeft={1}
+          borderStyle={'solid'}
+          borderColor={useColorModeValue('gray.200', 'gray.700')}
+          align={'start'}
         >
-          <Stack
-            mt={2}
-            pl={4}
-            borderLeft={1}
-            borderStyle={'solid'}
-            borderColor={useColorModeValue('gray.200', 'gray.700')}
-            align={'start'}
-          >
-            {children &&
-              children.map((child) => (
-                <ChackraLink key={child.label} py={2} href={child.href}>
-                  {child.label}
-                </ChackraLink>
-              ))}
-          </Stack>
-        </Collapse>
-      </Stack>
-    </Link>
+          {children &&
+            children.map((child) => (
+              <ChackraLink key={child.label} py={2} href={child.href}>
+                {child.label}
+              </ChackraLink>
+            ))}
+        </Stack>
+      </Collapse>
+    </Stack>
   );
 };
