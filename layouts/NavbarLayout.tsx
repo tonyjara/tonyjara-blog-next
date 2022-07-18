@@ -17,6 +17,7 @@ import Link from 'next/link';
 import DarkModeButton from '../components/Buttons/DarkModeButton';
 import TinyLogoButton from '../components/Buttons/TinyLogoButton';
 import SocialMediaStrip from '../components/SocialMediaStrip';
+import MainMetaTags from '../components/Meta/MainMetatags';
 
 const NavbarLayout: React.FC<{ children: ReactElement | ReactElement[] }> = ({
   children,
@@ -25,6 +26,7 @@ const NavbarLayout: React.FC<{ children: ReactElement | ReactElement[] }> = ({
 
   return (
     <div>
+      <MainMetaTags />
       <Box
         position={'fixed'}
         width="100%"

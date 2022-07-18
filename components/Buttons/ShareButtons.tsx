@@ -13,7 +13,7 @@ import {
 import { IPost } from '../../interfaces/post';
 import { WEB_URL } from '../../lib/constants';
 
-const ShareButtons: React.FC<{ title: string; post?: IPost }> = ({
+const ShareButtons: React.FC<{ title: string; post: IPost }> = ({
   post,
   title,
 }) => {
@@ -54,7 +54,11 @@ const ShareButtons: React.FC<{ title: string; post?: IPost }> = ({
         bg="gray.300"
         color="black"
       >
-        <TwitterShareButton url={WEBPAGE_URL} title={post?.title ?? title}>
+        <TwitterShareButton
+          // via="asdf" Generates text on post and adds a @ tag
+          url={WEBPAGE_URL}
+          title={post?.title ?? title}
+        >
           <TwitterIcon round size={25} />
         </TwitterShareButton>
       </Tooltip>
