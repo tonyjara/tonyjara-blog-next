@@ -26,13 +26,7 @@ export default function Post({ post, morePosts, preview }: Props) {
     <>
       <BlogMetaTags post={post} />
       <Flex p={{ base: 5, md: 2 }} justifyContent={'center'} mb={'80px'}>
-        <Box maxW="800px">
-          {/* <Header /> */}
-
-          {/* <Head>
-              <title>{post.title} | Next.js Blog Example with</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head> */}
+        <Box maxW="800px" width={'100%'}>
           <BlogHeader {...post} />
           <BlogBody content={post.content} />
         </Box>

@@ -8,8 +8,8 @@ import FaviconLinks from './FaviconLinks';
 const BlogMetaTags = ({ post }: { post: IPost }) => {
   const { title, excerpt, slug, coverImage } = post;
 
-  console.log(WEB_URL + slug);
-  const blogUrl = WEB_URL + slug;
+  const blogUrl = WEB_URL + '/blog/' + slug;
+
   return (
     <Head>
       <title>{`TJ - ${title}`}</title>

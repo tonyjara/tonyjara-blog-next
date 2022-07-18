@@ -7,6 +7,7 @@ import {
   Text,
   Image,
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import React from 'react';
 
 const HeroPage = () => {
@@ -70,8 +71,13 @@ const HeroPage = () => {
             color: 'gray.300',
           }}
         >
-          I have a blog too.
+          I have a{' '}
+          <Link href={'/blog'}>
+            <span className="text-blue-500 font-bold cursor-pointer">blog</span>
+          </Link>{' '}
+          too.
         </chakra.p>
+
         <Stack
           direction={{
             base: 'column',

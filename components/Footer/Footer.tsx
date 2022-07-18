@@ -67,10 +67,7 @@ export default function Footer() {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Text>
-            <span className="copyleft">&copy; </span> 2022 All rights
-            unreserved.
-          </Text>
+          <SocialMediaStrip />
           <Button
             leftIcon={<FaGithub />}
             as={'a'}
@@ -80,7 +77,10 @@ export default function Footer() {
           >
             Clone this blog
           </Button>
-          <SocialMediaStrip />
+          <Text>
+            <span className="copyleft">&copy; </span> 2022 All rights
+            unreserved.
+          </Text>
         </Container>
       </Box>
     </Box>
