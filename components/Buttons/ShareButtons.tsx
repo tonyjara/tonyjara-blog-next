@@ -13,10 +13,8 @@ import {
 import { IPost } from '../../interfaces/post';
 import { WEB_URL } from '../../lib/constants';
 
-const ShareButtons: React.FC<{ title: string; post: IPost }> = ({
-  post,
-  title,
-}) => {
+const ShareButtons = (props: IPost) => {
+  const { title } = props;
   const router = useRouter();
   const toast = useToast();
 
@@ -40,11 +38,7 @@ const ShareButtons: React.FC<{ title: string; post: IPost }> = ({
         bg="gray.300"
         color="black"
       >
-        <WhatsappShareButton
-          url={WEBPAGE_URL}
-          title={post?.title ?? title}
-          separator=":: "
-        >
+        <WhatsappShareButton url={WEBPAGE_URL} title={title} separator=":: ">
           <WhatsappIcon round size={25} />
         </WhatsappShareButton>
       </Tooltip>
@@ -57,7 +51,7 @@ const ShareButtons: React.FC<{ title: string; post: IPost }> = ({
         <TwitterShareButton
           // via="asdf" Generates text on post and adds a @ tag
           url={WEBPAGE_URL}
-          title={post?.title ?? title}
+          title={title}
         >
           <TwitterIcon round size={25} />
         </TwitterShareButton>
@@ -68,7 +62,7 @@ const ShareButtons: React.FC<{ title: string; post: IPost }> = ({
         bg="gray.300"
         color="black"
       >
-        <FacebookShareButton url={WEBPAGE_URL} title={post?.title ?? title}>
+        <FacebookShareButton url={WEBPAGE_URL} title={title}>
           <FacebookIcon round size={25} />
         </FacebookShareButton>
       </Tooltip>

@@ -37,7 +37,12 @@ const BlogCoverImage = ({
   return (
     <div className="sm:mx-0">
       {slug ? (
-        <a target={'_blank'} href={birbLink} aria-label={title}>
+        <a
+          target={'_blank'}
+          href={birbLink}
+          aria-label={title}
+          rel="noreferrer"
+        >
           {image}
         </a>
       ) : (

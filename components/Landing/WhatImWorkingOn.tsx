@@ -53,7 +53,7 @@ export default function WhatImWorkingOn() {
   return (
     <Box display={'flex'} alignItems="center" flexDir={'column'} p={4}>
       <Text fontWeight={'bold'} pb={20} fontSize={'3xl'}>
-        Projects I'm working on:
+        Projects I&apos;m working on:
       </Text>
       <SimpleGrid columns={{ base: 1, md: 3 }} maxW={1200} spacing={10}>
         <Feature

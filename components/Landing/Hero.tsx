@@ -42,7 +42,7 @@ const HeroPage = () => {
             color: 'gray.100',
           }}
         >
-          Hi, i'm Tony Jara <br />
+          Hi, i&apos;m Tony Jara <br />
           <Text
             display={{
               base: 'block',

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { title } from 'process';
 import React from 'react';
 import { IPost } from '../../interfaces/post';
 import { WEB_URL } from '../../lib/constants';

@@ -17,7 +17,7 @@ import Link from 'next/link';
 import DarkModeButton from '../components/Buttons/DarkModeButton';
 import TinyLogoButton from '../components/Buttons/TinyLogoButton';
 import SocialMediaStrip from '../components/SocialMediaStrip';
-import MainMetaTags from '../components/Meta/MainMetatags';
+import MainMetaTags from '../components/Meta/MainMetaTags';
 
 const NavbarLayout: React.FC<{ children: ReactElement | ReactElement[] }> = ({
   children,
