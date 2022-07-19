@@ -4,20 +4,16 @@ import {
   useDisclosure,
   Flex,
   Stack,
-  Button,
   Collapse,
   Box,
   IconButton,
   useColorModeValue,
-  Center,
 } from '@chakra-ui/react';
 import { DesktopNav } from './DesktopNav';
 import { MobileNav } from './MobileNav';
-import Link from 'next/link';
 import DarkModeButton from '../components/Buttons/DarkModeButton';
 import TinyLogoButton from '../components/Buttons/TinyLogoButton';
 import SocialMediaStrip from '../components/SocialMediaStrip';
-import MainMetaTags from '../components/Meta/MainMetaTags';
 
 const NavbarLayout: React.FC<{ children: ReactElement | ReactElement[] }> = ({
   children,
@@ -26,7 +22,6 @@ const NavbarLayout: React.FC<{ children: ReactElement | ReactElement[] }> = ({
 
   return (
     <div>
-      <MainMetaTags />
       <Box
         position={'fixed'}
         width="100%"

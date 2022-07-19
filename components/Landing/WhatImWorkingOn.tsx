@@ -1,16 +1,12 @@
-import { ReactElement } from 'react';
 import {
   Box,
   SimpleGrid,
-  Icon,
   Text,
   Stack,
   Flex,
-  Avatar,
-  Image,
   useColorModeValue,
 } from '@chakra-ui/react';
-
+import Image from 'next/image';
 interface FeatureProps {
   title: string;
   text: string;
@@ -30,9 +26,11 @@ const Feature = ({ title, text, logoUrl, tech, href }: FeatureProps) => {
       <Stack p={6}>
         <Flex as={'a'} href={href} target="_blank" w={16} h={16}>
           <Image
-            rounded={8}
+            height={'100px'}
+            width={'100px'}
+            // rounded={8}
             src={logoUrl}
-            objectFit="cover"
+            objectFit="contain"
             alt={`Logo for ${title}`}
           />
         </Flex>

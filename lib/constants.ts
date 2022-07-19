@@ -9,3 +9,7 @@ export const socialMediaLinks = {
 export const repoLink = 'https://github.com/tonyjara/tonyjara-blog-next';
 
 export const WEB_URL = 'https://tonyjara.com';
+// export const WEB_URL =
+//   process.env.NODE_ENV === 'development'
+//     ? 'http://localhost:3000'
+//     : 'https://tonyjara.com';

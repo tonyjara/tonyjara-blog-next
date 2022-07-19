@@ -1,8 +1,9 @@
-import { Box, Center, Flex } from '@chakra-ui/react';
+import { Box, Flex, chakra, Stack } from '@chakra-ui/react';
 import React from 'react';
 import BlogListComponent from '../../components/Blog/blog-list-card';
 import BlogSearchbar from '../../components/Blog/blog-searchbar';
 import Footer from '../../components/Footer/Footer';
+import GeneralMetaTag from '../../components/Meta/GeneralMetaTag';
 import { IPost } from '../../interfaces/post';
 import { getAllPosts } from '../../lib/api';
 
@@ -11,16 +12,12 @@ type Props = {
 };
 
 const BlogHome = ({ allPosts }: Props) => {
-  const options = [
-    { value: 'javascript', label: 'Javascript' },
-    { value: 'chakra', label: 'Chakra' },
-    { value: 'react', label: 'React' },
-    { value: 'css', label: 'CSS' },
-  ];
   return (
     <>
+      <GeneralMetaTag title="Blog" />
       <Flex flexDirection="column" justifyContent="center">
         <BlogSearchbar posts={allPosts} />
+
         {allPosts.map((post) => (
           <Box p={[5, 0]} key={post.slug}>
             <BlogListComponent post={post} />

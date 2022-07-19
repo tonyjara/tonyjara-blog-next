@@ -1,38 +1,42 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import React from 'react';
-import { IPost } from '../../interfaces/post';
 import { WEB_URL } from '../../lib/constants';
 import FaviconLinks from './FaviconLinks';
 
-const MainMetaTags = () => {
+const GeneralMetaTag = ({ title }: { title?: string }) => {
+  const router = useRouter();
   const origin = typeof window === 'undefined' ? '' : window.location.origin;
 
   const imageUrl = origin + '/assets/birbs/metabackground.jpg';
-  const description = "Tony Jara's personal website and blog.";
-  const title = 'TJ';
+  const description =
+    "Hi i'm Tony Jara, I'm a fullstack javascript developer and this is my personal website and blog.";
+  const myTitle = title ? `TJ - ${title}` : 'TJ';
+  const currentUrl = `${WEB_URL}${router.asPath}`;
 
   return (
     <Head>
-      <title>{`TJ`}</title>
+      <link rel="canonical" href={currentUrl} />
+      <title>{myTitle}</title>
+      <html lang="en" />
 
       <meta name="author" content="Tony Jara" />
       <meta name="description" content={description} />
-      <meta name="keywords" content={`${title}`} />
       <meta name="theme-color" content="lab(29.2345% 39.3825 20.0664)" />
 
       {/* <!-- Facebook Meta Tags --> */}
-      <meta property="og:url" content={WEB_URL} />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={myTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
 
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta property="twitter:domain" content="tonyjara.com" />
-      <meta property="twitter:url" content={WEB_URL} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={title} />
+      <meta name="twitter:domain" content="tonyjara.com" />
+      <meta name="twitter:url" content={currentUrl} />
+      <meta name="twitter:title" content={myTitle} />
+      <meta name="twitter:description" content={myTitle} />
       <meta name="twitter:image" content={imageUrl} />
 
       <FaviconLinks />
@@ -40,4 +44,4 @@ const MainMetaTags = () => {
   );
 };
 
-export default MainMetaTags;
+export default GeneralMetaTag;

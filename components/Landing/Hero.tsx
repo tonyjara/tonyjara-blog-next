@@ -1,12 +1,4 @@
-import {
-  chakra,
-  Stack,
-  Button,
-  Icon,
-  Box,
-  Text,
-  Image,
-} from '@chakra-ui/react';
+import { chakra, Stack, Button, Icon, Box, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -25,7 +17,7 @@ const HeroPage = () => {
           md: 'center',
         }}
       >
-        <chakra.h6
+        <chakra.h1
           mb={6}
           fontSize={{
             base: '4xl',
@@ -55,7 +47,7 @@ const HeroPage = () => {
           >
             Fullstack Javascript Dev
           </Text>{' '}
-        </chakra.h6>
+        </chakra.h1>
         <chakra.p
           px={{
             base: 0,

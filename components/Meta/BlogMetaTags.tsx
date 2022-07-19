@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { title } from 'process';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { IPost } from '../../interfaces/post';
 import { WEB_URL } from '../../lib/constants';
@@ -7,9 +7,11 @@ import FaviconLinks from './FaviconLinks';
 
 const BlogMetaTags = ({ post }: { post: IPost }) => {
   const { title, excerpt, slug, coverImage } = post;
+  const router = useRouter();
   const origin = typeof window === 'undefined' ? '' : window.location.origin;
 
   const blogUrl = WEB_URL + '/blog/' + slug;
+  const currentUrl = `${WEB_URL}${router.asPath}`;
 
   const imageUrl = origin + coverImage;
 
@@ -17,11 +19,12 @@ const BlogMetaTags = ({ post }: { post: IPost }) => {
 
   return (
     <Head>
+      <link rel="canonical" href={currentUrl} />
       <title>{`TJ - ${title}`}</title>
+      <html lang="en" />
 
-      <meta name="author" content="" />
+      <meta name="author" content="TonyJara" />
       <meta name="description" content={excerpt} />
-      <meta name="keywords" content={`${title}`} />
       <meta name="theme-color" content="lab(29.2345% 39.3825 20.0664)" />
 
       {/* <!-- Facebook Meta Tags --> */}
