@@ -23,7 +23,7 @@ const ShareButtons = (props: IPost) => {
   const handleCopyLink = () => {
     navigator.clipboard.writeText(WEBPAGE_URL);
     toast({
-      title: 'Link copiado!',
+      title: 'Link on clipboard!',
       status: 'success',
       isClosable: true,
       duration: 2000,
