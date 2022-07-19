@@ -1,4 +1,4 @@
-import { AspectRatio, Box, Center, Flex, Image, Text } from '@chakra-ui/react';
+import { AspectRatio, Box, Image, Text } from '@chakra-ui/react';
 import { IPost } from '../../interfaces/post';
 
 const BlogCoverImage = ({

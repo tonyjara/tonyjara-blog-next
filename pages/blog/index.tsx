@@ -1,4 +1,4 @@
-import { Box, Flex, chakra, Stack } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import React from 'react';
 import BlogListComponent from '../../components/Blog/blog-list-card';
 import BlogSearchbar from '../../components/Blog/blog-searchbar';

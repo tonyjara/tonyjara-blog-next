@@ -17,6 +17,7 @@ const LatestBlogs = ({ allPosts }: { allPosts: IPost[] }) => {
       >
         Latest blogs
       </Text>
+      <Text fontStyle="italic">Swipe me!</Text>
       {/* <Text>Swipe me!</Text> */}
       <CardSwiper>
         {allPosts.map((post) => {

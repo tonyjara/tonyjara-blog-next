@@ -1,14 +1,6 @@
 import { Stack, Icon, Link, useColorMode } from '@chakra-ui/react';
 import React from 'react';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-  FaWhatsapp,
-  FaSpotify,
-  FaYoutube,
-  FaGithub,
-} from 'react-icons/fa';
+import { FaInstagram, FaTwitter, FaGithub } from 'react-icons/fa';
 import { socialMediaLinks } from '../lib/constants';
 
 const SocialMediaStrip = () => {

@@ -1,20 +1,7 @@
 import React from 'react';
-import {
-  Box,
-  Heading,
-  Image,
-  Text,
-  HStack,
-  Tag,
-  useColorModeValue,
-  Container,
-  Button,
-  AspectRatio,
-  Flex,
-} from '@chakra-ui/react';
+import { Box, Container, Button } from '@chakra-ui/react';
 import Link from 'next/link';
 import { IPost } from '../../interfaces/post';
-import { formatDate } from '../../lib/dateHelpers';
 import BlogCardImage from './Card/BlogCardImage';
 import BlogCardTags from './Card/BlogCardTags';
 import BlogCardAuthor from './Card/BlogCardAuthor';

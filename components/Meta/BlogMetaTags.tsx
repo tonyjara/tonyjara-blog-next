@@ -21,7 +21,6 @@ const BlogMetaTags = ({ post }: { post: IPost }) => {
     <Head>
       <link rel="canonical" href={currentUrl} />
       <title>{`TJ - ${title}`}</title>
-      <html lang="en" />
 
       <meta name="author" content="TonyJara" />
       <meta name="description" content={excerpt} />

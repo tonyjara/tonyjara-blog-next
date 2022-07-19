@@ -1,4 +1,4 @@
-import { Box, HStack, SimpleGrid, Stack, Tag } from '@chakra-ui/react';
+import { Box, SimpleGrid, Tag } from '@chakra-ui/react';
 import React from 'react';
 
 const BlogCardTags = ({ tags }: { tags: string[] | undefined }) => {

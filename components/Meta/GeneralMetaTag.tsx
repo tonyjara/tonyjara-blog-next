@@ -18,7 +18,6 @@ const GeneralMetaTag = ({ title }: { title?: string }) => {
     <Head>
       <link rel="canonical" href={currentUrl} />
       <title>{myTitle}</title>
-      <html lang="en" />
 
       <meta name="author" content="Tony Jara" />
       <meta name="description" content={description} />

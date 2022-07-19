@@ -4,11 +4,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   Box,
-  Center,
   Heading,
   Text,
   Stack,
-  Avatar,
   Flex,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -21,7 +19,7 @@ const BlogSwipeCard: FC<{ post: IPost }> = ({
   post,
   // options = {},
 }) => {
-  const { title, excerpt, date, author, coverImage } = post;
+  const { title, excerpt, date, coverImage } = post;
 
   return (
     <Link href={`/blog/${post.slug}`} key={post.slug}>

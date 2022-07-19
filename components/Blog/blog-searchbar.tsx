@@ -2,7 +2,7 @@ import React from 'react';
 import { IPost } from '../../interfaces/post';
 import Select from 'react-select';
 import { capitalize } from 'lodash';
-import { Box, Flex, useColorMode } from '@chakra-ui/react';
+import { Box, useColorMode } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
 const BlogSearchbar = ({ posts }: { posts: IPost[] }) => {
