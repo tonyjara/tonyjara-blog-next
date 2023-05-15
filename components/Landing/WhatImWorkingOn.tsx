@@ -1,92 +1,53 @@
-import {
-  Box,
-  SimpleGrid,
-  Text,
-  Stack,
-  Flex,
-  useColorModeValue,
-} from '@chakra-ui/react';
-import Image from 'next/image';
-interface FeatureProps {
-  title: string;
-  text: string;
-  logoUrl: string;
-  tech: string;
-  href: string;
-}
-
-const Feature = ({ title, text, logoUrl, tech, href }: FeatureProps) => {
-  return (
-    <Box
-      w={'full'}
-      bg={useColorModeValue('white', 'gray.900')}
-      boxShadow={'2xl'}
-      rounded={'md'}
-    >
-      <Stack p={6}>
-        <Flex as={'a'} href={href} target="_blank" w={16} h={16}>
-          <Image
-            height={'100px'}
-            width={'100px'}
-            // rounded={8}
-            src={logoUrl}
-            objectFit="contain"
-            alt={`Logo for ${title}`}
-          />
-        </Flex>
-        <Text as={'a'} href={href} target="_blank" fontWeight={'bold'}>
-          {title}
-        </Text>
-        <Text color={'gray.500'}>{text}</Text>
-        <Text fontWeight={'bold'} color={'gray.600'}>
-          Tech stack:
-        </Text>
-        <Text color={'gray.500'}>{tech}</Text>
-      </Stack>
-    </Box>
-  );
-};
+import { Box, SimpleGrid, Text } from "@chakra-ui/react";
+import ProjectCard from "../Cards/ProjectCard";
 
 export default function WhatImWorkingOn() {
   return (
-    <Box display={'flex'} alignItems="center" flexDir={'column'} p={4}>
-      <Text fontWeight={'bold'} pb={20} fontSize={'3xl'}>
+    <Box mb={"20px"} display={"flex"} alignItems="center" flexDir={"column"}>
+      <Text
+        my={"20px"}
+        fontWeight={"bold"}
+        fontSize={{ base: "2xl", md: "3xl" }}
+      >
         Projects I&apos;m working on:
       </Text>
-      <SimpleGrid columns={{ base: 1, md: 3 }} maxW={1200} spacing={10}>
-        <Feature
-          href="https://kuic.pro"
-          logoUrl="/assets/projects/kuiclogo.png"
-          title={'Kuic'}
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+        <ProjectCard
+          href="https://jurumi.opades.org.py"
+          logoUrl="/assets/projects/jurumilogo.png"
+          title={"Jurumi"}
           text={
-            'Tools for businesses, such as inventory management, invoice printer, sales management, warehouse management and more.'
+            "Jurumi is designed for non-profits and serves as a management system for donations, memberships, and expense tracking. "
           }
-          tech="React SPA Full-stack firebase app with gcp functions, sendgrid template emails and automatic-debit integration (Bancard)."
+          tech="Azure Storage, Vms and Postgres Dbs, NextJs, Next-auth, Docusaurus, nestJs. "
+          footer="Repo and docs below."
+          repoLink="https://github.com/tonyjara/opades-sys"
+          docuLink="https://docs.opades.org.py"
         />
-        <Feature
-          href="https://4ngos.org"
-          logoUrl="/assets/projects/4ngos.png"
-          title={'4ngos'}
-          text={
-            "Patreon like platform to manage memberships, notifications via email and automatic debit on ngo's. (In the making)"
-          }
-          tech="NextJs with Postgres, Next-auth, self-hosted postal smtp server."
-        />
-        <Feature
+        <ProjectCard
           href="https://opades.org.py"
           logoUrl="/assets/projects/opadeslogo.png"
-          title={'Opades'}
-          text={'Conservation Ngo website.'}
+          title={"Opades"}
+          text={"Conservation Ngo website."}
           tech="NextJs with self-hosted wordpress as cms and sendgrid smtp."
         />
-        <Feature
+        <ProjectCard
           href="https://www.instagram.com/arsenalcue/"
           logoUrl="/assets/projects/arselogo.jpeg"
-          title={'Afu-app'}
+          title={"Afu-app"}
           text={
-            'In-house application made for customer and ticket management. (App access not public.)'
+            "In-house application made for customer and ticket management. (App access not public.)"
           }
           tech="React SPA with firebase and firestore."
+        />
+        <ProjectCard
+          href="https://kuic.pro"
+          logoUrl="/assets/projects/kuiclogo.png"
+          title={"Kuic"}
+          text={
+            "Tools for businesses, such as inventory management, invoice printer, sales management, warehouse management and more."
+          }
+          tech="React SPA Full-stack firebase app with gcp functions, sendgrid template emails and automatic-debit integration (Bancard)."
         />
       </SimpleGrid>
     </Box>

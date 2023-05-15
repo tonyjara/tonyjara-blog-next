@@ -1,16 +1,16 @@
 ---
 title: "Testing Postgres on NextJs api's with Jest and Typescript"
 excerpt: "Testing in postgres with NextJs api's and Typescript can be hard, in this blog I show you how I do it."
-coverImage: '/assets/birbs/avionsito.jpg'
-birbName: 'Cock-tailed Tyrant | Alectrurus tricolor'
-birbLink: 'https://ebird.org/species/cottyr1'
-tags: ['Postgres', 'Jest', 'NextJs', 'SQL']
-date: 'Sat Jul 16 2022 14:37:22 GMT-0400 (Paraguay Standard Time)'
+coverImage: "/assets/birbs/avionsito.jpg"
+birbName: "Cock-tailed Tyrant | Alectrurus tricolor"
+birbLink: "https://ebird.org/species/cottyr1"
+tags: ["Postgres", "Jest", "NextJs", "SQL"]
+date: "Sat Jul 16 2022 14:37:22 GMT-0400 (Paraguay Standard Time)"
 author:
   name: Tony Jara
-  picture: '/assets/author/myface.jpeg'
+  picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: '/assets/birbs/avionsito.jpg'
+  url: "/assets/birbs/avionsito.jpg"
 ---
 
 If you're like me and want to be 100% sure on every request you send to your database, then you definitely need to test.
@@ -70,7 +70,7 @@ Copy the following code:
 ```ts
 //You can later use this code to connect to your prod database.
 
-import pg from 'pg';
+import pg from "pg";
 
 let pool = null as pg.Pool | null;
 
@@ -91,7 +91,7 @@ export const poolConfig: pg.PoolConfig = {
 const myPool = {
   connect: async (options: pg.PoolConfig) => {
     pool = new pg.Pool(options);
-    await pool.query('SELECT 1 + 1;');
+    await pool.query("SELECT 1 + 1;");
     return;
   },
 };
@@ -108,27 +108,27 @@ export { myPool, pool };
 Copy the following code:
 
 ```javascript
-import { randomBytes } from 'crypto';
-import { default as migrate } from 'node-pg-migrate';
-import { PoolConfig } from 'pg';
-import format from 'pg-format';
-import { myPool, pool } from './pool';
+import { randomBytes } from "crypto";
+import { default as migrate } from "node-pg-migrate";
+import { PoolConfig } from "pg";
+import format from "pg-format";
+import { myPool, pool } from "./pool";
 
 //Don't forget to add your localhost user from PG to your .env.test
 const test_user = process.env.NEXT_PUBLIC_PG_TEST_USER;
 
 const root_config: PoolConfig = {
-  host: 'localhost',
+  host: "localhost",
   port: 5432,
-  database: 'test',
+  database: "test",
   user: test_user,
-  password: '',
+  password: "",
 };
 
 export const db_context = {
   roleName: () => {
     // Randomly generate a role name to connect to PG as
-    return 'a' + randomBytes(4).toString('hex');
+    return "a" + randomBytes(4).toString("hex");
   },
   build: async (roleName: string) => {
     // Connect to PG as usual
@@ -136,12 +136,12 @@ export const db_context = {
 
     // Create new role
     await pool?.query(
-      format('CREATE ROLE %I WITH LOGIN PASSWORD %L', roleName, roleName)
+      format("CREATE ROLE %I WITH LOGIN PASSWORD %L", roleName, roleName)
     );
 
     // Create a schema with the same name
     await pool?.query(
-      format('CREATE SCHEMA %I AUTHORIZATION %I', roleName, roleName)
+      format("CREATE SCHEMA %I AUTHORIZATION %I", roleName, roleName)
     );
     // Disconnect entirely from PG
     await pool?.end();
@@ -149,10 +149,10 @@ export const db_context = {
     // Run migrations in new schema
     await migrate({
       schema: roleName,
-      direction: 'up',
+      direction: "up",
       log: () => {},
       noLock: true,
-      dir: 'migrations',
+      dir: "migrations",
       databaseUrl: {
         host: root_config.host,
         port: root_config.port,
@@ -176,7 +176,7 @@ export const db_context = {
     return;
   },
   reset: async () => {
-    await pool?.query('DELETE FROM users;');
+    await pool?.query("DELETE FROM users;");
     return;
   },
   close: async (roleName: string) => {
@@ -187,8 +187,8 @@ export const db_context = {
     await myPool.connect(root_config);
 
     // Delete the role and schema we created
-    await pool?.query(format('DROP SCHEMA %I CASCADE;', roleName));
-    await pool?.query(format('DROP ROLE %I;', roleName));
+    await pool?.query(format("DROP SCHEMA %I CASCADE;", roleName));
+    await pool?.query(format("DROP ROLE %I;", roleName));
 
     // Disconnect
     return await pool?.end();
@@ -229,10 +229,10 @@ On that same folder let's create another file called initial_db_structure.ts, th
 Copy the following code inside, keep in mind that your folder structure may be different to the one here:
 
 ```javascript
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-const tablesPath = path.resolve(__dirname, './TABLES.sql');
+const tablesPath = path.resolve(__dirname, "./TABLES.sql");
 
 const tables = fs.readFileSync(tablesPath).toString();
 
@@ -259,8 +259,8 @@ This is going to create a folder called migrations with a file inside.
 Inside that file, replace it's contents with the following code:
 
 ```javascript
-import { MigrationBuilder, ColumnDefinitions } from 'node-pg-migrate';
-import { initial_db_structure } from '../SQL/initial_db_structure';
+import { MigrationBuilder, ColumnDefinitions } from "node-pg-migrate";
+import { initial_db_structure } from "../SQL/initial_db_structure";
 
 export const shorthands: ColumnDefinitions | undefined = undefined;
 
@@ -370,11 +370,11 @@ export default async function userSignup(
 Finally! The last thing we need to do is create a folder called test, and inside that folder we'll create a file called signup-test.test.ts with the following code:
 
 ```javascript
-import { createMocks } from 'node-mocks-http';
-import { db_context } from '../dbConfig/db_context';
-import userSignup from '../pages/api/user-signup';
+import { createMocks } from "node-mocks-http";
+import { db_context } from "../dbConfig/db_context";
+import userSignup from "../pages/api/user-signup";
 
-describe('tests auth functions', () => {
+describe("tests auth functions", () => {
   // eslint-disable-next-line no-unused-vars
   let context;
   const roleName = db_context.roleName();
@@ -391,9 +391,9 @@ describe('tests auth functions', () => {
     await db_context.close(roleName);
   });
 
-  it('tests user signup', async () => {
+  it("tests user signup", async () => {
     const { req, res } = createMocks({
-      method: 'POST',
+      method: "POST",
       //@ts-ignore
       body: JSON.stringify(mockSignupData),
     });
@@ -402,21 +402,19 @@ describe('tests auth functions', () => {
 
     const response = JSON.parse(res._getData());
 
-    console.log(JSON.parse(res._getData()));
-
     expect(Boolean(response.user.displayName)).toBe(true);
-    expect(response.user.role === 'USER').toBe(true);
+    expect(response.user.role === "USER").toBe(true);
 
     expect(res._getStatusCode()).toBe(200);
   });
 });
 
 let mockSignupData = {
-  email: 'test@test.com',
-  displayName: 'TEST USER',
-  password: 'asdfasdf',
-  confirmPassword: 'asdfasdf',
-  reCaptchaToken: 'asdf',
+  email: "test@test.com",
+  displayName: "TEST USER",
+  password: "asdfasdf",
+  confirmPassword: "asdfasdf",
+  reCaptchaToken: "asdf",
 };
 ```
 

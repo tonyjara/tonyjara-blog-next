@@ -1,7 +1,7 @@
-import { HStack, Tooltip, Icon, useToast } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import React from 'react';
-import { FiLink } from 'react-icons/fi';
+import { HStack, Tooltip, Icon, useToast } from "@chakra-ui/react";
+import { usePathname } from "next/navigation";
+import React from "react";
+import { FiLink } from "react-icons/fi";
 import {
   WhatsappShareButton,
   WhatsappIcon,
@@ -9,25 +9,25 @@ import {
   TwitterIcon,
   FacebookShareButton,
   FacebookIcon,
-} from 'react-share';
-import { IPost } from '../../interfaces/post';
-import { WEB_URL } from '../../lib/constants';
+} from "react-share";
+import { IPost } from "../../interfaces/post";
+import { WEB_URL } from "../../lib/constants";
 
 const ShareButtons = (props: IPost) => {
   const { title } = props;
-  const router = useRouter();
+  const pathname = usePathname();
   const toast = useToast();
 
-  const WEBPAGE_URL = `${WEB_URL}${router.asPath}`;
+  const WEBPAGE_URL = `${WEB_URL}${pathname}`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(WEBPAGE_URL);
     toast({
-      title: 'Link on clipboard!',
-      status: 'success',
+      title: "Link on clipboard!",
+      status: "success",
       isClosable: true,
       duration: 2000,
-      position: 'top',
+      position: "top",
     });
   };
   return (
@@ -70,7 +70,7 @@ const ShareButtons = (props: IPost) => {
         <div style={{ marginTop: -1 }}>
           <Icon
             onClick={handleCopyLink}
-            cursor={'pointer'}
+            cursor={"pointer"}
             boxSize={6}
             as={FiLink}
             bgColor="gray.300"

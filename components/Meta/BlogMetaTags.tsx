@@ -1,21 +1,20 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import React from 'react';
-import { IPost } from '../../interfaces/post';
-import { WEB_URL } from '../../lib/constants';
-import FaviconLinks from './FaviconLinks';
+"use client";
+import Head from "next/head";
+import { usePathname } from "next/navigation";
+import React from "react";
+import { IPost } from "../../interfaces/post";
+import { WEB_URL } from "../../lib/constants";
+import FaviconLinks from "./FaviconLinks";
 
 const BlogMetaTags = ({ post }: { post: IPost }) => {
   const { title, excerpt, slug, coverImage } = post;
-  const router = useRouter();
-  const origin = typeof window === 'undefined' ? '' : window.location.origin;
+  const pathname = usePathname();
+  const origin = typeof window === "undefined" ? "" : window.location.origin;
 
-  const blogUrl = WEB_URL + '/blog/' + slug;
-  const currentUrl = `${WEB_URL}${router.asPath}`;
+  const blogUrl = WEB_URL + "/blog/" + slug;
+  const currentUrl = `${WEB_URL}${pathname}`;
 
   const imageUrl = origin + coverImage;
-
-  //ogImage.url is avalable if needed.
 
   return (
     <Head>

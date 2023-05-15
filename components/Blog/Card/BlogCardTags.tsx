@@ -1,5 +1,5 @@
-import { Box, SimpleGrid, Tag } from '@chakra-ui/react';
-import React from 'react';
+import { Box, SimpleGrid, Tag } from "@chakra-ui/react";
+import React from "react";
 
 const BlogCardTags = ({ tags }: { tags: string[] | undefined }) => {
   return (
@@ -8,7 +8,12 @@ const BlogCardTags = ({ tags }: { tags: string[] | undefined }) => {
         tags.map((tag) => {
           return (
             <Box key={tag}>
-              <Tag size={'md'} variant="solid" colorScheme="orange">
+              <Tag
+                className="gap-5 whitespace-nowrap min-w-fit"
+                size={"md"}
+                variant="solid"
+                colorScheme="orange"
+              >
                 {tag}
               </Tag>
             </Box>

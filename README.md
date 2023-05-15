@@ -5,5 +5,5 @@ It's free!.
 ## How to use
 
 ```bash
-yarn dev
+pnpm dev
 ```
