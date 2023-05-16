@@ -43,9 +43,9 @@ const HeroPage = () => {
         fontSize={{ md: "4xl", base: "lg" }}
         /* className="text_shadows" */
         fontWeight={"bold"}
-        textDecor={"underline"}
+        /* textDecor={"underline"} */
       >
-        Open for work
+        OPEN TO WORK
       </Text>
       <Button
         as="a"

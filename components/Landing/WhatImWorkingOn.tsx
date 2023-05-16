@@ -11,7 +11,7 @@ export default function WhatImWorkingOn() {
       >
         Projects I&apos;m working on:
       </Text>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <ProjectCard
           href="https://jurumi.opades.org.py"
           logoUrl="/assets/projects/jurumilogo.png"
