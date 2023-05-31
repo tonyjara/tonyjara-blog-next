@@ -7,6 +7,25 @@ import BlogHeader from "../../../components/Blog/blog-header";
 import BlogMetaTags from "../../../components/Meta/BlogMetaTags";
 import { getAllPosts } from "../../../lib/GetAllPosts";
 
+export async function generateMetadata({ params }: any) {
+  const allPosts = getAllPosts();
+  const post = allPosts.find((post) => post.slug === params.slug);
+  return {
+    title: post?.title ?? "",
+    description: post?.excerpt ?? "",
+    themeColor: "#000000",
+    colorScheme: "dark",
+    metadataBase: new URL("https://tonyjara.com"),
+    alternates: {
+      canonical: `/bog/${post?.slug}`,
+    },
+
+    openGraph: {
+      images: [post?.coverImage ?? ""],
+    },
+  };
+}
+
 const getPost = async (slug: string) => {
   const folder = "_posts/";
   const file = `${folder}${slug}.md`;
@@ -27,6 +46,7 @@ export const generateStaticParams = async () => {
 export default async function Post(props: any) {
   const slug = props.params.slug;
   const post = await getPost(slug);
+
   return (
     <div style={{ marginBottom: "20px", marginTop: "20px" }}>
       <BlogMetaTags post={post} />

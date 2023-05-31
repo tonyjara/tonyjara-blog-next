@@ -4,10 +4,17 @@ import "@fontsource/nunito";
 import "highlight.js/styles/atom-one-dark.css";
 
 export const metadata = {
-  title: "Tony Jara",
+  title: "Tony Jara's website",
   description:
-    "My name is Tony Jara, I'm a fullstack Javascript/Typescript sofware developer. In this website you can find my portfolio and information on how to contact me.",
+    "I'm a fullstack Javascript/Typescript sofware developer. In this website you can find my portfolio and information on how to contact me.",
   themeColor: "#000000",
+  metadataBase: new URL("https://tonyjara.com"),
+  alternates: {
+    canonical: `/`,
+  },
+  openGraph: {
+    images: ["/assets/author/myFace.jpeg"],
+  },
 };
 
 export default function RootLayout({
