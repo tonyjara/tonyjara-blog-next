@@ -6,7 +6,7 @@ const DarkModeButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Button onClick={toggleColorMode}>
+    <Button ml={"10px"} onClick={toggleColorMode}>
       {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
     </Button>
   );

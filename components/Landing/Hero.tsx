@@ -1,12 +1,11 @@
 import { Button, Icon, Box, Text } from "@chakra-ui/react";
 import React from "react";
-import SocialMediaStrip from "../SocialMediaStrip";
 
 const HeroPage = () => {
   return (
     <Box
-      mt="10px"
-      mb="10px"
+      mt="20px"
+      mb="20px"
       textAlign="center"
       alignItems={"center"}
       display={"flex"}
@@ -14,11 +13,11 @@ const HeroPage = () => {
     >
       <Text
         fontSize={{
-          base: "3xl",
-          md: "6xl",
+          base: "2xl",
+          md: "5xl",
         }}
         fontWeight="bold"
-        mb={"10px"}
+        mb={"20px"}
         lineHeight="none"
         color="gray.900"
         _dark={{
@@ -36,16 +35,13 @@ const HeroPage = () => {
           base: "3xl",
           md: "6xl",
         }}
-        mb={"10px"}
+        mb={"20px"}
       >
         Fullstack Javascript Dev
       </Text>{" "}
-      <Text fontSize={{ md: "4xl", base: "2xl" }} fontWeight={"bold"}>
-        OPEN TO WORK
-      </Text>
       <Button
         as="a"
-        my={"10px"}
+        mb={"20px"}
         href="mailto:nytojara@gmail.com"
         colorScheme="gray"
         display="inline-flex"
@@ -54,6 +50,7 @@ const HeroPage = () => {
         maxW="260px"
         size="lg"
         cursor="pointer"
+        className="glow-on-hover"
       >
         Contact me
         <Icon boxSize={5} ml={1} viewBox="0 0 20 20" fill="currentColor">
@@ -64,7 +61,14 @@ const HeroPage = () => {
           />
         </Icon>
       </Button>
-      <SocialMediaStrip />
+      <Text
+        mb={"20px"}
+        fontSize={{ md: "3xl", base: "xl" }}
+        fontWeight={"bold"}
+        fontStyle={"italic"}
+      >
+        OPEN TO WORK
+      </Text>
     </Box>
   );
 };

@@ -3,11 +3,11 @@ import ProjectCard from "../Cards/ProjectCard";
 
 export default function WhatImWorkingOn() {
   return (
-    <Box mb={"20px"} display={"flex"} alignItems="center" flexDir={"column"}>
+    <Box display={"flex"} alignItems="center" flexDir={"column"}>
       <Text
-        my={"20px"}
+        mb={"20px"}
         fontWeight={"bold"}
-        fontSize={{ base: "2xl", md: "3xl" }}
+        fontSize={{ base: "xl", md: "3xl" }}
       >
         Projects I&apos;m working on:
       </Text>

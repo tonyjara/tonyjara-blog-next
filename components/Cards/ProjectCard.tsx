@@ -44,32 +44,49 @@ const ProjectCard = ({
       rounded={"md"}
     >
       <Stack p={6}>
-        <Flex as={"a"} href={href} target="_blank" w={16} h={16}>
+        <Flex
+          justifyContent={"space-between"}
+          as={"a"}
+          href={href}
+          target="_blank"
+          /* w={16} */
+          flexDir={"row"}
+          alignItems={"center"}
+          h={16}
+        >
+          <Text
+            fontSize={"2xl"}
+            as={"a"}
+            href={href}
+            target="_blank"
+            fontWeight={"bold"}
+          >
+            {title}
+          </Text>
+
           <Image
-            height={100}
-            width={100}
+            height={40}
+            width={40}
+            style={{ objectFit: "contain" }}
             src={logoUrl}
             alt={`Logo for ${title}`}
           />
         </Flex>
-        <Text as={"a"} href={href} target="_blank" fontWeight={"bold"}>
-          {title}
-        </Text>
-        <Text color={"gray.500"}>{text}</Text>
+        <Text>{text}</Text>
         <Text fontWeight={"bold"} color={"gray.600"}>
           Tech stack:
         </Text>
-        <Text color={"gray.500"}>{tech}</Text>
-        <Text color={"gray.500"}>{footer}</Text>
+        <Text>{tech}</Text>
+        <Text>{footer}</Text>
       </Stack>
-      <HStack mb="20px" ml="20px" spacing={2}>
+      <HStack mb="20px" ml="20px" spacing={6}>
         {repoLink && (
           <Link
             color={isDark ? "#FFFF" : "#000"}
             target="_blank"
             href={repoLink}
           >
-            <Icon fontSize={{ base: "xl", md: "4xl" }} as={FaGithub} />
+            <Icon fontSize={{ base: "3xl", md: "4xl" }} as={FaGithub} />
           </Link>
         )}
 
@@ -79,7 +96,7 @@ const ProjectCard = ({
             target="_blank"
             href={docuLink}
           >
-            <Icon fontSize={{ base: "xl", md: "4xl" }} as={CgLoadbarDoc} />
+            <Icon fontSize={{ base: "3xl", md: "4xl" }} as={CgLoadbarDoc} />
           </Link>
         )}
       </HStack>
