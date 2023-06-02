@@ -2,7 +2,7 @@
 import BlogTitle from "./blog-title";
 import BlogCoverImage from "./blog-cover-image";
 import { IPost } from "../../interfaces/post";
-/* import ShareButtons from "../Buttons/ShareButtons"; */
+import ShareButtons from "../Buttons/ShareButtons";
 
 const BlogHeader = (props: IPost) => {
   const { title } = props;
@@ -12,6 +12,7 @@ const BlogHeader = (props: IPost) => {
 
       <div className="mb-6 md:mb-16 sm:mx-0 flex justify-center flex-col">
         <BlogCoverImage {...props} />
+        <ShareButtons {...props} />
       </div>
     </div>
   );

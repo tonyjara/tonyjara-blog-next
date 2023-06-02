@@ -2,6 +2,7 @@
 import React from "react";
 import BlogListComponent from "../../components/Blog/blog-list-card";
 import { getAllPosts } from "../../lib/GetAllPosts";
+import { convertToDate } from "../../lib/dateHelpers";
 
 export const metadata = {
   title: "Tony Jara's Blog",
@@ -11,7 +12,10 @@ export const metadata = {
 };
 
 const BlogHome = () => {
-  const allPosts = getAllPosts().sort((a, b) => (a.date < b.date ? 1 : -1));
+  const allPosts = getAllPosts().sort(
+    //@ts-ignore
+    (a, b) => convertToDate(b.date) - convertToDate(a.date)
+  );
 
   return (
     <div>

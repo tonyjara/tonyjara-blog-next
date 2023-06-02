@@ -32,41 +32,22 @@ const ShareButtons = (props: IPost) => {
   };
   return (
     <HStack alignSelf="center" alignItems="center" pt={5} spacing={[1, 3]}>
-      <Tooltip
-        hasArrow
-        label="Compartir en whatsapp."
-        bg="gray.300"
-        color="black"
-      >
+      <Tooltip hasArrow label="Share on whatsapp." bg="gray.300" color="black">
         <WhatsappShareButton url={WEBPAGE_URL} title={title} separator=":: ">
           <WhatsappIcon round size={25} />
         </WhatsappShareButton>
       </Tooltip>
-      <Tooltip
-        hasArrow
-        label="Compartir en twitter."
-        bg="gray.300"
-        color="black"
-      >
-        <TwitterShareButton
-          // via="asdf" Generates text on post and adds a @ tag
-          url={WEBPAGE_URL}
-          title={title}
-        >
+      <Tooltip hasArrow label="Share on twitter." bg="gray.300" color="black">
+        <TwitterShareButton url={WEBPAGE_URL} title={title}>
           <TwitterIcon round size={25} />
         </TwitterShareButton>
       </Tooltip>
-      <Tooltip
-        hasArrow
-        label="Compartir en Facebook."
-        bg="gray.300"
-        color="black"
-      >
+      <Tooltip hasArrow label="Share on Facebook." bg="gray.300" color="black">
         <FacebookShareButton url={WEBPAGE_URL} title={title}>
           <FacebookIcon round size={25} />
         </FacebookShareButton>
       </Tooltip>
-      <Tooltip hasArrow label="Copiar link." bg="gray.300" color="black">
+      <Tooltip hasArrow label="Copy link." bg="gray.300" color="black">
         <div style={{ marginTop: -1 }}>
           <Icon
             onClick={handleCopyLink}

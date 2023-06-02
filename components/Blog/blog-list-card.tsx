@@ -4,7 +4,6 @@ import { Box, Container, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { IPost } from "../../interfaces/post";
 import BlogCardImage from "./Card/BlogCardImage";
-import BlogCardTags from "./Card/BlogCardTags";
 import BlogCardAuthor from "./Card/BlogCardAuthor";
 import BlogCardTitle from "./Card/BlogCardTitle";
 
@@ -26,7 +25,7 @@ const BlogListComponent: React.FC<{ post: IPost }> = ({ post }) => {
           justifyContent="center"
           marginTop={{ base: "3", sm: "0" }}
         >
-          <BlogCardTags tags={post.tags} />
+          {/* <BlogCardTags tags={post.tags} /> */}
           <BlogCardTitle {...post} />
 
           <div
@@ -38,7 +37,7 @@ const BlogListComponent: React.FC<{ post: IPost }> = ({ post }) => {
 
           <Link href={`/blog/${post.slug}`}>
             <Button maxW={150} marginTop={5} marginBottom={5}>
-              Leer más
+              Read more{" "}
             </Button>
           </Link>
           <BlogCardAuthor {...post} />

@@ -1,9 +1,9 @@
-import { IAuthor } from './author';
+import { IAuthor } from "./author";
 
 export interface IPost {
   slug: string;
   title: string;
-  date: Date;
+  date: string;
   coverImage: string;
   author: IAuthor;
   birbName: string;

@@ -1,5 +1,5 @@
-import { AspectRatio, Box, Image, Text } from '@chakra-ui/react';
-import { IPost } from '../../interfaces/post';
+import { AspectRatio, Box, Image, Text } from "@chakra-ui/react";
+import { IPost } from "../../interfaces/post";
 
 const BlogCoverImage = ({
   title,
@@ -7,12 +7,13 @@ const BlogCoverImage = ({
   slug,
   birbLink,
   birbName,
+  date,
 }: IPost) => {
   const image = (
     <Box>
       <AspectRatio
         ratio={16 / 9}
-        maxW={{ base: '200px', md: '400px' }}
+        maxW={{ base: "200px", md: "400px" }}
         minW={{ base: 200, md: 400 }}
       >
         <Image
@@ -23,14 +24,23 @@ const BlogCoverImage = ({
         />
       </AspectRatio>
       <Text
-        maxW={{ base: '200px', md: '400px' }}
+        maxW={{ base: "200px", md: "400px" }}
         minW={{ base: 200, md: 400 }}
         mt={2}
-        textAlign={'center'}
-        fontStyle={'italic'}
+        textAlign={"center"}
+        fontStyle={"italic"}
         color="GrayText"
       >
         {birbName}
+      </Text>
+      <Text
+        maxW={{ base: "200px", md: "400px" }}
+        minW={{ base: 200, md: 400 }}
+        mt={2}
+        textAlign={"center"}
+        color="GrayText"
+      >
+        {date}
       </Text>
     </Box>
   );
@@ -38,7 +48,7 @@ const BlogCoverImage = ({
     <div className="sm:mx-0">
       {slug ? (
         <a
-          target={'_blank'}
+          target={"_blank"}
           href={birbLink}
           aria-label={title}
           rel="noreferrer"

@@ -1,16 +1,16 @@
 ---
-title: 'Chakra-ui Drag-n-Drop for images'
-excerpt: 'Learn how to make a beautiful Drag-n-drop component for image upload.'
-coverImage: '/assets/birbs/federal.jpg'
-birbName: 'Scarlet-headed blackbird | Amblyramphus holosericeus'
-birbLink: 'https://ebird.org/species/schbla1/'
-tags: ['react', 'chakra-ui']
-date: 'Sat Jul 16 2022 14:37:22 GMT-0400 (Paraguay Standard Time)'
+title: "Chakra-ui Drag-n-Drop for images"
+excerpt: "Learn how to make a beautiful Drag-n-drop component for image upload."
+coverImage: "/assets/birbs/federal.jpg"
+birbName: "Scarlet-headed blackbird | Amblyramphus holosericeus"
+birbLink: "https://ebird.org/species/schbla1/"
+tags: ["react", "chakra-ui"]
+date: "15/07/2022"
 author:
   name: Tony Jara
-  picture: '/assets/author/myface.jpeg'
+  picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: '/assets/birbs/greathornedowl.jpg'
+  url: "/assets/birbs/greathornedowl.jpg"
 ---
 
 If you ever searched for a beautiful drag and drop for your images, you're in luck. This works with nextjs as well.

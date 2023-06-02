@@ -5,7 +5,7 @@ coverImage: "/assets/birbs/yellowmacaw.jpg"
 birbName: "Blue-and-yellow Macaw | Ara ararauna"
 birbLink: "https://ebird.org/species/baymac"
 tags: ["personal"]
-date: "Tue May 30 2023 11:37:22 GMT-0400 (Paraguay Standard Time)"
+date: "30/05/2023"
 author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"

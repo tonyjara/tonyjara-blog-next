@@ -5,7 +5,7 @@ coverImage: "/assets/birbs/greathornedowl.jpg"
 birbName: "Great Horned Owl | Bubo Virginianus"
 birbLink: "https://ebird.org/species/grhowl"
 tags: ["personal"]
-date: "Sat Jul 16 2022 14:37:22 GMT-0400 (Paraguay Standard Time)"
+date: "16/07/2022"
 author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
@@ -13,7 +13,7 @@ ogImage:
   url: "/assets/birbs/greathornedowl.jpg"
 ---
 
-## I love nature!
+## I love nature!19
 
 I realized that you don't need to be an environmental engineed to make an impact and help with conservation, you can see this in the work I'm putting on as volunteer in environmental non-profits and also the contracts I chose to take as a freelance developer. I also love birding! All pictures you see in this webpage where taken by me. Click on the pics if you wanna learn more about the birds.
 

@@ -5,7 +5,7 @@ coverImage: "/assets/birbs/avionsito.jpg"
 birbName: "Cock-tailed Tyrant | Alectrurus tricolor"
 birbLink: "https://ebird.org/species/cottyr1"
 tags: ["Postgres", "Jest", "NextJs", "SQL"]
-date: "Sat Jul 16 2022 14:37:22 GMT-0400 (Paraguay Standard Time)"
+date: "14/07/2022"
 author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
