@@ -4,14 +4,12 @@ import React from "react";
 import { FiLink } from "react-icons/fi";
 import {
   WhatsappShareButton,
-  WhatsappIcon,
   TwitterShareButton,
-  TwitterIcon,
   FacebookShareButton,
-  FacebookIcon,
 } from "react-share";
 import { IPost } from "../../interfaces/post";
 import { WEB_URL } from "../../lib/constants";
+import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
 
 const ShareButtons = (props: IPost) => {
   const { title } = props;
@@ -34,17 +32,20 @@ const ShareButtons = (props: IPost) => {
     <HStack alignSelf="center" alignItems="center" pt={5} spacing={[1, 3]}>
       <Tooltip hasArrow label="Share on whatsapp." bg="gray.300" color="black">
         <WhatsappShareButton url={WEBPAGE_URL} title={title} separator=":: ">
-          <WhatsappIcon round size={25} />
+          {/* <WhatsappIcon /> */}
+          <FaWhatsapp fontSize={"30px"} />
         </WhatsappShareButton>
       </Tooltip>
       <Tooltip hasArrow label="Share on twitter." bg="gray.300" color="black">
         <TwitterShareButton url={WEBPAGE_URL} title={title}>
-          <TwitterIcon round size={25} />
+          {/* <TwitterIcon round size={25} /> */}
+          <FaTwitter fontSize={"30px"} />
         </TwitterShareButton>
       </Tooltip>
       <Tooltip hasArrow label="Share on Facebook." bg="gray.300" color="black">
         <FacebookShareButton url={WEBPAGE_URL} title={title}>
-          <FacebookIcon round size={25} />
+          {/* <FacebookIcon round size={25} /> */}
+          <FaFacebook fontSize={"30px"} />
         </FacebookShareButton>
       </Tooltip>
       <Tooltip hasArrow label="Copy link." bg="gray.300" color="black">
@@ -52,11 +53,8 @@ const ShareButtons = (props: IPost) => {
           <Icon
             onClick={handleCopyLink}
             cursor={"pointer"}
-            boxSize={6}
+            boxSize={"30px"}
             as={FiLink}
-            bgColor="gray.300"
-            rounded={20}
-            padding={1}
           />
         </div>
       </Tooltip>

@@ -54,13 +54,7 @@ const ProjectCard = ({
           alignItems={"center"}
           h={16}
         >
-          <Text
-            fontSize={"2xl"}
-            as={"a"}
-            href={href}
-            target="_blank"
-            fontWeight={"bold"}
-          >
+          <Text fontSize={"2xl"} fontWeight={"bold"}>
             {title}
           </Text>
 
