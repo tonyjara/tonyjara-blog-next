@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/greathornedowl.jpg"
+  url: "/assets/birbs/brown-noddy.jpg"
 ---
 
 # What is progressive enhancement?

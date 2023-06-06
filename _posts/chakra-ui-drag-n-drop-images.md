@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/greathornedowl.jpg"
+  url: "/assets/birbs/federal.jpg"
 ---
 
 If you ever searched for a beautiful drag and drop for your images, you're in luck. This works with nextjs as well.

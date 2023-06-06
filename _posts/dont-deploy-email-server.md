@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/greathornedowl.jpg"
+  url: "/assets/birbs/yellowmacaw.jpg"
 ---
 
 # Maybe managing your own email server is not the best idea

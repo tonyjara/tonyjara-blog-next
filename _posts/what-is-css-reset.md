@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/greathornedowl.jpg"
+  url: "/assets/birbs/red-necked-tanager.jpg"
 ---
 
 A Css reset file helps flatten inconsistencies across browsers. The default css configuration is not the same in all browsers and can make your UI vary from browser to browser, this can add up in undesirable ways.
