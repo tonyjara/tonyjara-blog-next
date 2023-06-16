@@ -12,6 +12,7 @@ const rubik = Rubik({ subsets: ["latin"] });
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <>
+      {/* eslint-disable-next-line react/no-unknown-property */}
       <style jsx global>
         {`
           :root {
