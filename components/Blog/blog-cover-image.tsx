@@ -11,11 +11,7 @@ const BlogCoverImage = ({
 }: IPost) => {
   const image = (
     <Box>
-      <AspectRatio
-        ratio={16 / 9}
-        maxW={{ base: "200px", md: "400px" }}
-        minW={{ base: 200, md: 400 }}
-      >
+      <AspectRatio ratio={16 / 9}>
         <Image
           rounded={8}
           src={coverImage}
@@ -23,23 +19,10 @@ const BlogCoverImage = ({
           alt={`Cover Image for ${title}`}
         />
       </AspectRatio>
-      <Text
-        maxW={{ base: "200px", md: "400px" }}
-        minW={{ base: 200, md: 400 }}
-        mt={2}
-        textAlign={"center"}
-        fontStyle={"italic"}
-        color="GrayText"
-      >
+      <Text mt={2} textAlign={"center"} fontStyle={"italic"} color="GrayText">
         {birbName}
       </Text>
-      <Text
-        maxW={{ base: "200px", md: "400px" }}
-        minW={{ base: 200, md: 400 }}
-        mt={2}
-        textAlign={"center"}
-        color="GrayText"
-      >
+      <Text mt={2} textAlign={"center"} color="GrayText">
         {date}
       </Text>
     </Box>

@@ -1,43 +1,51 @@
-import { Stack, Icon, useColorMode } from "@chakra-ui/react";
+import { Stack, Icon, useColorMode, useColorModeValue } from "@chakra-ui/react";
 
 import React from "react";
 import { FaInstagram, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
 import { socialMediaLinks } from "../lib/constants";
 import Link from "next/link";
+import { leafColors } from "../styles/theme";
 
 const SocialMediaStrip = () => {
-  const { colorMode } = useColorMode();
-  const isDark = colorMode === "dark";
-
+  const accentColor = useColorModeValue(
+    leafColors.accentLight,
+    leafColors.accentDark
+  );
   return (
-    <Stack direction={"row"} spacing={8}>
+    <Stack
+      mt={{ base: "20px", md: "0px" }}
+      order={{ base: 3, md: 2 }}
+      direction={"row"}
+      spacing={8}
+    >
       <Link target="_blank" href={socialMediaLinks.linkedin}>
         <Icon
+          color={accentColor}
           borderEndRadius={"20%"}
-          color={"#0072b1"}
-          fontSize={{ base: "3xl", md: "4xl" }}
+          fontSize={{ base: "3xl", md: "3xl" }}
           as={FaLinkedin}
         />
       </Link>
 
       <Link target="_blank" href={socialMediaLinks.github}>
         <Icon
-          color={isDark ? "#FFFF" : "#000"}
-          fontSize={{ base: "3xl", md: "4xl" }}
+          color={accentColor}
+          fontSize={{ base: "3xl", md: "3xl" }}
           as={FaGithub}
         />
       </Link>
       <Link target="_blank" href={socialMediaLinks.instagram}>
         <Icon
+          color={accentColor}
           className="instagram"
-          fontSize={{ base: "3xl", md: "4xl" }}
+          fontSize={{ base: "3xl", md: "3xl" }}
           as={FaInstagram}
         />
       </Link>
       <Link target="_blank" href={socialMediaLinks.twitter}>
         <Icon
-          color={"#1DA1F2"}
-          fontSize={{ base: "3xl", md: "4xl" }}
+          color={accentColor}
+          fontSize={{ base: "3xl", md: "3xl" }}
           as={FaTwitter}
         />
       </Link>

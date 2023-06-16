@@ -1,3 +1,4 @@
+import { ColorModeScript } from "@chakra-ui/react";
 import { Providers } from "../components/providers";
 import "./global.css";
 import "@fontsource/nunito";

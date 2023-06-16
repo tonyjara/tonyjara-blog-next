@@ -1,52 +1,45 @@
-"use client";
 import {
   Box,
-  Button,
-  Container,
+  Link,
   Stack,
   Text,
+  Button,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaGithub } from "react-icons/fa";
-import { repoLink } from "../../lib/constants";
 import SocialMediaStrip from "../SocialMediaStrip";
+import { leafColors } from "../../styles/theme";
 
 export default function Footer() {
+  const accentColor = useColorModeValue(
+    leafColors.accentLight,
+    leafColors.accentDark
+  );
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
-      color={useColorModeValue("gray.700", "gray.200")}
+      px={{ base: 5, md: 10 }}
+      as={Stack}
+      width="100%"
+      py={4}
+      direction={{ base: "column", md: "row" }}
+      spacing={4}
+      alignItems={"center"}
+      justifyContent={"space-between"}
     >
-      <Box
-        borderTopWidth={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.700")}
+      <SocialMediaStrip />
+      <Button
+        as={Link}
+        order={{ base: 1, md: 2 }}
+        href="#top"
+        fontSize={"xl"}
+        /* onClick={topFunction} */
+        variant={"ghost"}
       >
-        <Container
-          as={Stack}
-          maxW={"6xl"}
-          py={4}
-          direction={{ base: "column", md: "row" }}
-          spacing={4}
-          justify={{ base: "center", md: "space-between" }}
-          alignItems={"center"}
-        >
-          <SocialMediaStrip />
-          <Button
-            leftIcon={<FaGithub />}
-            as={"a"}
-            target="_blank"
-            href={repoLink}
-            size="sm"
-          >
-            Clone this repo
-          </Button>
-          <Text>
-            <span className="copyleft">&copy; </span> {new Date().getFullYear()}{" "}
-            All rights unreserved.
-          </Text>
-        </Container>
-      </Box>
+        Back to top
+      </Button>
+      <Text fontSize={"lg"} color={accentColor} order={{ base: 2, md: 3 }}>
+        <span className="copyleft">&copy; </span> {new Date().getFullYear()}{" "}
+        Tony Jara{" "}
+      </Text>
     </Box>
   );
 }

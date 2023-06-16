@@ -29,7 +29,7 @@ const ShareButtons = (props: IPost) => {
     });
   };
   return (
-    <HStack alignSelf="center" alignItems="center" pt={5} spacing={[1, 3]}>
+    <HStack justify={"center"} py={5} spacing={5}>
       <Tooltip hasArrow label="Share on whatsapp." bg="gray.300" color="black">
         <WhatsappShareButton url={WEBPAGE_URL} title={title} separator=":: ">
           {/* <WhatsappIcon /> */}

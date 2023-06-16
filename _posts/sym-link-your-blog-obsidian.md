@@ -12,21 +12,23 @@ author:
 ogImage:
   url: "/assets/birbs/masked-tityra.jpg"
 ---
-*disclaimer: I'm a mac user*
 
-I don't know about you but I love [Obsidian](https://obsidian.md/). It just makes the most sense for everything I do. If you're not familiar with Obsidian, it's a note taking app in which every note you take is a Markdown file.  And this is particularly awesome for me because my blog is in [Markdown](https://en.wikipedia.org/wiki/Markdown). 
+**disclaimer: I'm a mac user**
 
-*Obsidian also supports vim ☕*
+I don't know about you but I love [Obsidian](https://obsidian.md/). It just makes the most sense for everything I do. If you're not familiar with Obsidian, it's a note taking app in which every note you take is a Markdown file. And this is particularly awesome for me because my blog is in [Markdown](https://en.wikipedia.org/wiki/Markdown).
+
+_Obsidian also supports vim ☕_
 
 For a while I was writing my blogs directly on Obsidian, then copy pasting everything into my blog's posts folder. And that was ok, but I was thinking, it would be so cool if I could just write everything once and deploy to my blog.
 
 Doing some research I found out that there are a lot of community plugins that integrate Obsidian with Git. Which is nice, but I feel that handling Git from Obsidian is never going to be as nice as handling it from your IDE, and the thought of having all those extra files just made me sick to my stomach. I just wanted to be able to open my blog folder straight from Obsidian and start writing. That's when it hit me. The answer is [_Symbolic Linking!_](https://en.wikipedia.org/wiki/Symbolic_link)
 
-A symbolic link or a symlink for short is a reference to a file or directory, sort of like aliases but better, if you symlink a folder to a specific place, it doesn't matter if you move that folder, the symlink will remain in place. This allows us to open only the desired folder, which in my case was my posts folder, inside any vault or directory in Obsidian. 
+A symbolic link or a symlink for short is a reference to a file or directory, sort of like aliases but better, if you symlink a folder to a specific place, it doesn't matter if you move that folder, the symlink will remain in place. This allows us to open only the desired folder, which in my case was my posts folder, inside any vault or directory in Obsidian.
 
 This is how you do it:
+
 - Inside your terminal, cd into the directory you want to create the symlink, in my case it was inside my Obsidian vault
--  Type *"ln -s "* , leave a space after the "s" and then drag and drop the folder you want symlink and press enter.
+- Type _"ln -s "_ , leave a space after the "s" and then drag and drop the folder you want symlink and press enter.
 - Done, enjoy a lovely editing experience.
 
 This is an example on how that code would look like in the terminal. DO NOT copy and paste this, you need to replace the path accordingly.

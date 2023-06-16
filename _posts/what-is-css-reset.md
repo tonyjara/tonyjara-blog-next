@@ -17,14 +17,14 @@ A Css reset file helps flatten inconsistencies across browsers. The default css 
 
 The reason why we still have this issue and there's no standard when it comes to CSS defaults is because there are far too many websites that depend on this defaults and if they changed this, many of them would break. [There's an awesome podcast](https://open.spotify.com/episode/6SYD2Is8dLb73Hua8yKzQw?si=7cad25eb827b4f78) that talks about this if you're interested.
 
-_It's not a bug, it's a feature!_ 🐛
+**It's not a bug, it's a feature!** 🐛
 
 Here is a comparison of 4 web browsers without and with the css reset.
 
 <img alt="Pic of 4 browsers showing css" src="/assets/css-reset/no-reset.png" />
 <img alt="Pic of 4 browsers showing css" src="/assets/css-reset/with-reset.png" />
 
-If you a minimal css reset file, you can use this one:
+If you want a minimal css reset file, you can use this one:
 
 ```css
 html,
