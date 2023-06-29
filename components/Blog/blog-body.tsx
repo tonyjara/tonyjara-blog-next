@@ -12,8 +12,8 @@ const BlogBody = ({ content }: Props) => {
     <div
       className={
         colorMode === "light"
-          ? "prose whitespace-normal prose-strong:font-extrabold max-w-[1000px]  prose-a:text-blue-600"
-          : "prose prose-strong:text-blue-700 prose-strong:font-extrabold  text-slate-400 prose-headings:text-slate-300 prose-a:text-blue-300"
+          ? "prose whitespace-normal prose-strong:font-extrabold  prose-a:text-blue-600 max-w-none"
+          : "prose prose-strong:text-blue-700 prose-strong:font-extrabold  text-slate-400 prose-headings:text-slate-300 prose-a:text-blue-300 max-w-none"
       }
       dangerouslySetInnerHTML={{ __html: content }}
     />

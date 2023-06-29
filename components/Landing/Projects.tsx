@@ -12,8 +12,11 @@ const Projects = () => {
         fontSize={{ base: "2.5rem", md: "4rem" }}
         mt={{ base: "40px", md: "100px" }}
         mb={{ base: "40px", md: "20px" }}
+        textDecor={"underline"}
+        textDecorationThickness="from-font"
+        letterSpacing={"0.5rem"}
       >
-        PROJECTS
+        SELECTED WORK
       </Text>
       <Stack spacing={40}>
         <ProjectJurumi />

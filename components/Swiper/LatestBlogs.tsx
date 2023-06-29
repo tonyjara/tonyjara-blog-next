@@ -1,23 +1,31 @@
-import { Box, Text } from '@chakra-ui/react';
-import React from 'react';
-import { SwiperSlide } from 'swiper/react';
-import { IPost } from '../../interfaces/post';
-import BlogSwipeCard from './BlogSwipeCard';
-import CardSwiper from './CardSwiper';
+import { Box, Text } from "@chakra-ui/react";
+import React from "react";
+import { SwiperSlide } from "swiper/react";
+import { IPost } from "../../interfaces/post";
+import BlogSwipeCard from "./BlogSwipeCard";
+import CardSwiper from "./CardSwiper";
 
-const LatestBlogs = ({ allPosts }: { allPosts: IPost[] }) => {
+const LatestBlogs = ({
+  allPosts,
+  title,
+}: {
+  allPosts: IPost[];
+  title?: string;
+}) => {
   return (
-    <Box alignItems="center" display={'flex'} flexDir="column">
+    <Box alignItems="center" display={"flex"} flexDir="column">
       <Text
-        fontWeight={'bold'}
-        textAlign={'center'}
-        pt={10}
+        fontWeight={"bold"}
+        textAlign={"center"}
+        pt={20}
         fontSize="4xl"
-        alignSelf={'center'}
+        alignSelf={"center"}
       >
-        Latest blogs
+        {title ? title : "Latest Blogs"}
       </Text>
-      <Text fontStyle="italic">Swipe me!</Text>
+      <Text mb="20px" fontStyle="italic">
+        Swipe me!
+      </Text>
       {/* <Text>Swipe me!</Text> */}
       <CardSwiper>
         {allPosts.map((post) => {

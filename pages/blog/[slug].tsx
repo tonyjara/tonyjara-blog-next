@@ -1,17 +1,19 @@
 import BlogBody from "../../components/Blog/blog-body";
-import { getPostBySlug } from "../../lib/api";
+import { getAllPosts, getPostBySlug } from "../../lib/api";
 import markdownToHtml from "../../lib/markdownToHtml";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import { getPostSlugs } from "../../lib/api";
 import MetaTagsComponent from "../../components/Meta/MetaTagsComponent";
 import { IPost } from "../../interfaces/post";
-import { Link, Text, AspectRatio, Box, Heading } from "@chakra-ui/react";
+import { Link, Text, Box, Heading } from "@chakra-ui/react";
 import Image from "next/image";
 import ShareButtons from "../../components/Buttons/ShareButtons";
 import { parse } from "date-fns";
+import LatestBlogs from "../../components/Swiper/LatestBlogs";
+import BlogBreadCrumbs from "../../components/Blog/BlogBreadCrumbs";
 
-export default function Post(props: { post: IPost }) {
+export default function Post(props: { post: IPost; allPosts: IPost[] }) {
   const { post } = props;
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
@@ -19,6 +21,8 @@ export default function Post(props: { post: IPost }) {
   }
 
   const parsedDate = parse(post.date, "dd/MM/yyyy", new Date());
+
+  const allPostsButThisOne = props.allPosts.filter((x) => x.slug !== post.slug);
 
   return (
     <Box
@@ -37,24 +41,28 @@ export default function Post(props: { post: IPost }) {
         date={parsedDate}
       />
       <Box textAlign={"center"}>
+        <BlogBreadCrumbs blogTitle={post.date} />
         <Heading fontSize={{ base: "3xl", md: "5xl" }} my="20px">
           {post.title}
         </Heading>
 
-        <Link target="_blank" href={post.birbLink} cursor={"pointer"}>
-          <AspectRatio ratio={16 / 9}>
+        <Box w="100%" display={"flex"} justifyContent={"center"}>
+          <Link target="_blank" href={post.birbLink} cursor={"pointer"}>
             <Image
               style={{
                 borderRadius: "10px",
+                objectFit: "cover",
+                height: "auto",
+                width: "auto",
               }}
               src={post.coverImage}
-              width={500}
-              height={500}
+              width={600}
+              height={600}
               alt={`Cover Image for ${post.title}`}
               priority
             />
-          </AspectRatio>
-        </Link>
+          </Link>
+        </Box>
         <Text mt={2} textAlign={"center"} fontStyle={"italic"} color="GrayText">
           {post.birbName}
         </Text>
@@ -65,6 +73,7 @@ export default function Post(props: { post: IPost }) {
       </Box>
 
       <BlogBody content={post.content} />
+      <LatestBlogs title="Other blogs" allPosts={allPostsButThisOne} />
     </Box>
   );
 }
@@ -73,9 +82,11 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);
 
   const content = await markdownToHtml(post.content || "");
+  const allPosts = getAllPosts();
 
   return {
     props: {
+      allPosts,
       post: {
         ...post,
         content,

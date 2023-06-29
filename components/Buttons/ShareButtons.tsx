@@ -1,4 +1,4 @@
-import { HStack, Tooltip, Icon, useToast } from "@chakra-ui/react";
+import { HStack, Tooltip, Icon, useToast, Text } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { FiLink } from "react-icons/fi";
@@ -29,7 +29,8 @@ const ShareButtons = (props: IPost) => {
     });
   };
   return (
-    <HStack justify={"center"} py={5} spacing={5}>
+    <HStack justify={"center"} alignItems={"center"} py={5} spacing={5}>
+      <Text fontSize={"xl"}>Share: </Text>
       <Tooltip hasArrow label="Share on whatsapp." bg="gray.300" color="black">
         <WhatsappShareButton url={WEBPAGE_URL} title={title} separator=":: ">
           {/* <WhatsappIcon /> */}

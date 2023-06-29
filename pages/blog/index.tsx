@@ -5,6 +5,7 @@ import { GetStaticProps } from "next";
 import { IPost } from "../../interfaces/post";
 import { getAllPosts } from "../../lib/api";
 import MetaTagsComponent from "../../components/Meta/MetaTagsComponent";
+import BlogBreadCrumbs from "../../components/Blog/BlogBreadCrumbs";
 
 const BlogHome = (props: { allPosts: IPost[] }) => {
   const allPosts = props.allPosts.sort(
@@ -18,6 +19,7 @@ const BlogHome = (props: { allPosts: IPost[] }) => {
         title="Blogs list"
         description="In this blog you can find my thoughts on software development, programming, and other topics."
       />
+      <BlogBreadCrumbs />
       {allPosts.map((post) => (
         <div key={post.slug}>
           <BlogListComponent post={post} />
