@@ -1,7 +1,7 @@
 ---
 title: "What is a CSS Reset file and why do we need it?"
 excerpt: "A brief explanation with examples of what CSS reset files are and why it's a good idea to use them."
-coverImage: "/assets/birbs/red-necked-tanager.jpg"
+coverImage: "/assets/birbs/red-necked-tanager.jpeg"
 birbName: "Red Necked Tanager / Tangara Cyanocephala"
 birbLink: "https://ebird.org/species/rentan1"
 tags: ["personal"]
@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/red-necked-tanager.jpg"
+  url: "/assets/birbs/red-necked-tanager.jpeg"
 ---
 
 A Css reset file helps flatten inconsistencies across browsers. The default css configuration is not the same in all browsers and can make your UI vary from browser to browser, this can add up in undesirable ways.

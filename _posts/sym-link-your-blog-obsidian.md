@@ -1,7 +1,7 @@
 ---
 title: "How to open your blog folder from Obsidian"
 excerpt: "If you prefer Obsidian to write blogs and you have a website that converts Markdown to HTML, there's in this blog I'll show you link both."
-coverImage: "/assets/birbs/masked-tityra.jpg"
+coverImage: "/assets/birbs/masked-tityra.jpeg"
 birbName: "Masked Tityra / Tityra Semifasciata"
 birbLink: "https://ebird.org/species/mastit1"
 tags: ["personal"]
@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/masked-tityra.jpg"
+  url: "/assets/birbs/masked-tityra.jpeg"
 ---
 
 **disclaimer: I'm a mac user**

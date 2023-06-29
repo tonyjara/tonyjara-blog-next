@@ -1,7 +1,7 @@
 ---
 title: "Don't deploy your email server"
 excerpt: "A story of why you should never deploy your own email server"
-coverImage: "/assets/birbs/yellowmacaw.jpg"
+coverImage: "/assets/birbs/yellowmacaw.jpeg"
 birbName: "Blue-and-yellow Macaw | Ara ararauna"
 birbLink: "https://ebird.org/species/baymac"
 tags: ["personal"]
@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/yellowmacaw.jpg"
+  url: "/assets/birbs/yellowmacaw.jpeg"
 ---
 
 # Maybe managing your own email server is not the best idea

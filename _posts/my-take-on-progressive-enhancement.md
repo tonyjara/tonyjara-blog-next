@@ -1,7 +1,7 @@
 ---
 title: "My take on progressive enhancement"
 excerpt: "How to achieve progressive enhancement with regards of browser comaptibility, css and functionality."
-coverImage: "/assets/birbs/brown-noddy.jpg"
+coverImage: "/assets/birbs/brown-noddy.jpeg"
 birbName: "Brown-noddy / Anous stolidus"
 birbLink: "https://ebird.org/species/brnnod"
 tags: ["personal"]
@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/brown-noddy.jpg"
+  url: "/assets/birbs/brown-noddy.jpeg"
 ---
 
 # What is progressive enhancement?

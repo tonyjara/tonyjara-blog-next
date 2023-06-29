@@ -1,7 +1,7 @@
 ---
 title: "Where(), is(), and has(), CSS Pseudo classes."
 excerpt: "A brief explanation of how the CSS pseudo classes where(), is() and has() work, with examples."
-coverImage: "/assets/birbs/blackleggedseriema.jpg"
+coverImage: "/assets/birbs/blackleggedseriema.jpeg"
 birbName: "Black Legged Seriema / Chunga burmeisteri"
 birbLink: "https://ebird.org/species/bllser1"
 tags: ["personal"]
@@ -10,7 +10,7 @@ author:
   name: Tony Jara
   picture: "/assets/author/myface.jpeg"
 ogImage:
-  url: "/assets/birbs/blackleggedseriema.jpg"
+  url: "/assets/birbs/blackleggedseriema.jpeg"
 ---
 
 This new pseudo-classes dropped in 2022, fairly new but already working in almost all browsers.
