@@ -12,6 +12,7 @@ import {
 import NavbarLayout from "../layouts/NavbarLayout";
 import Footer from "../components/Footer/Footer";
 import MetaTagsComponent from "../components/Meta/MetaTagsComponent";
+import CoolTool from "../CoolTool";
 
 const rubik = Rubik({ subsets: ["latin"] });
 const bebas = Bebas_Neue({ subsets: ["latin"], weight: "400" });
@@ -37,6 +38,7 @@ function App({ Component, pageProps }: AppProps) {
       </style>
       <ChakraProvider theme={theme}>
         <NavbarLayout>
+          {/* <CoolTool /> */}
           <Component {...pageProps} />
         </NavbarLayout>
         <Footer />
