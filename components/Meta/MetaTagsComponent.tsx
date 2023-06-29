@@ -3,15 +3,15 @@ import React from "react";
 import { WEB_URL } from "../../lib/constants";
 import FaviconLinks from "./FaviconLinks";
 import { usePathname } from "next/navigation";
-import { IPost } from "../../interfaces/post";
 
 interface props {
   title?: string;
   description?: string;
   imageSrc?: string;
+  date?: Date;
 }
 
-const MetaTagsComponent = ({ title, description, imageSrc }: props) => {
+const MetaTagsComponent = ({ title, description, imageSrc, date }: props) => {
   const pathname = usePathname();
   const origin = typeof window === "undefined" ? "" : window.location.origin;
 
@@ -35,6 +35,8 @@ const MetaTagsComponent = ({ title, description, imageSrc }: props) => {
       <meta name="author" content="Tony Jara" />
       <meta name="description" content={metaDescription} />
       <meta name="theme-color" content="#46AC42" />
+      <meta name="image" property="og:image" content={imageUrl} />
+      <meta property="og:image:alt" content={metaDescription} />
 
       {/* <!-- Facebook Meta Tags --> */}
       <meta name="url" property="og:url" content={currentUrl} />
@@ -45,8 +47,8 @@ const MetaTagsComponent = ({ title, description, imageSrc }: props) => {
         property="og:description"
         content={metaDescription}
       />
-      <meta name="image" property="og:image" content={imageUrl} />
-      <meta property="og:image:alt" content={metaDescription} />
+      {/* <meta name="image" property="og:image" content={imageUrl} /> */}
+      {/* <meta property="og:image:alt" content={metaDescription} /> */}
 
       {/* <!-- Twitter Meta Tags --> */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -54,8 +56,15 @@ const MetaTagsComponent = ({ title, description, imageSrc }: props) => {
       <meta name="twitter:url" content={currentUrl} />
       <meta name="twitter:title" content={myTitle} />
       <meta name="twitter:description" content={metaDescription} />
-      <meta name="twitter:image" content={imageUrl} />
-      <meta name="twitter:image:alt" content={metaDescription} />
+      {/* <meta name="twitter:image" content={imageUrl} /> */}
+      {/* <meta name="twitter:image:alt" content={metaDescription} /> */}
+
+      {/* <!-- LinkedIn Meta Tags --> */}
+      <meta
+        name="publish_date"
+        property="og:publish_date"
+        content={date?.toISOString() ?? new Date().toISOString()}
+      />
 
       <FaviconLinks />
     </Head>

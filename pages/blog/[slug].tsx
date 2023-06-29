@@ -7,9 +7,9 @@ import { getPostSlugs } from "../../lib/api";
 import MetaTagsComponent from "../../components/Meta/MetaTagsComponent";
 import { IPost } from "../../interfaces/post";
 import { Link, Text, AspectRatio, Box, Heading } from "@chakra-ui/react";
-import { title } from "process";
 import Image from "next/image";
 import ShareButtons from "../../components/Buttons/ShareButtons";
+import { parse } from "date-fns";
 
 export default function Post(props: { post: IPost }) {
   const { post } = props;
@@ -17,6 +17,8 @@ export default function Post(props: { post: IPost }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const parsedDate = parse(post.date, "dd/MM/yyyy", new Date());
 
   return (
     <Box
@@ -32,6 +34,7 @@ export default function Post(props: { post: IPost }) {
         title={post.title}
         description={post.excerpt}
         imageSrc={post.coverImage}
+        date={parsedDate}
       />
       <Box textAlign={"center"}>
         <Heading fontSize={{ base: "3xl", md: "5xl" }} my="20px">
@@ -47,7 +50,8 @@ export default function Post(props: { post: IPost }) {
               src={post.coverImage}
               width={500}
               height={500}
-              alt={`Cover Image for ${title}`}
+              alt={`Cover Image for ${post.title}`}
+              priority
             />
           </AspectRatio>
         </Link>

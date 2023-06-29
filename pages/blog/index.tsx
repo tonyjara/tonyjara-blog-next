@@ -29,7 +29,7 @@ const BlogHome = (props: { allPosts: IPost[] }) => {
 
 export default BlogHome;
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const allPosts = getAllPosts();
   return {
     props: { allPosts },
