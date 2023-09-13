@@ -1,4 +1,4 @@
-import { Flex, Heading, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Heading, Link, useBreakpointValue } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 
@@ -6,12 +6,16 @@ interface props {
   title: string;
   imageSrc: string;
   alt: string;
+  websiteUrl?: string;
 }
 
-const ProjectTitle = ({ title, imageSrc, alt }: props) => {
+const ProjectTitle = ({ websiteUrl, title, imageSrc, alt }: props) => {
   const smImageSize = useBreakpointValue({ base: 50, md: 70 });
   return (
     <Flex
+      as={websiteUrl ? Link : undefined}
+      href={websiteUrl}
+      target="_blank"
       gap={"20px"}
       justifyContent={{ base: "initial", lg: "space-between" }}
       alignItems={"center"}

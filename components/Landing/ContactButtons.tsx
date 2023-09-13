@@ -60,7 +60,7 @@ const ContactButtons = () => {
           leftIcon={<Icon color={accentColor} fontSize={"xl"} as={FaGithub} />}
           variant={"ghost"}
         >
-          Projects
+          Repos
         </Button>
       </Box>
       <Stack

@@ -4,6 +4,7 @@ import ProjectJurumi from "./Projects/ProjectJurumi";
 import ProjectAfuApp from "./Projects/ProjectAfuApp";
 import ProjectKuic from "./Projects/ProjectKuic";
 import ProjectOpades from "./Projects/ProjectOpades";
+import ProjectPodSol from "./Projects/ProjectPodSol";
 
 const Projects = () => {
   return (
@@ -19,6 +20,7 @@ const Projects = () => {
         SELECTED WORK
       </Text>
       <Stack spacing={40}>
+        <ProjectPodSol />
         <ProjectJurumi />
         <ProjectAfuApp />
         <ProjectKuic />

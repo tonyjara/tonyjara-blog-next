@@ -1,10 +1,11 @@
-import { Text, Flex, Box, Heading, useBreakpointValue } from "@chakra-ui/react";
+import { Text, Flex, Box, useBreakpointValue, Link } from "@chakra-ui/react";
 import React from "react";
 import Image from "next/image";
 import ProjectTitle from "./ProjectTitle";
 
 const ProjectKuic = () => {
   const mdImageBreakPoints = useBreakpointValue({ base: "200px", md: "400px" });
+  const websiteUrl = "https://kuic.pro";
   return (
     <Flex
       mt={{ base: "10px", md: "30px" }}
@@ -17,12 +18,21 @@ const ProjectKuic = () => {
       <Box flex={"1 0 0px"} justifyItems={"center"}>
         <Box>
           <ProjectTitle
+            websiteUrl={websiteUrl}
             title="Kuic"
             alt="Logo for Kuic app"
             imageSrc="/assets/projects/kuiclogo.png"
           />
 
-          <Box maxH={"400px"} hideFrom={"lg"} borderRadius={"10px"} my="40px">
+          <Box
+            as={Link}
+            href={websiteUrl}
+            target="_blank"
+            maxH={"400px"}
+            hideFrom={"lg"}
+            borderRadius={"10px"}
+            my="40px"
+          >
             <Image
               src={"/assets/projects/kuic-mockup.jpg"}
               style={{
@@ -51,6 +61,9 @@ const ProjectKuic = () => {
       </Box>
 
       <Box
+        as={Link}
+        href={websiteUrl}
+        target="_blank"
         hideBelow={"lg"}
         borderRadius={"10px"}
         flex={"2 0 0px"}
