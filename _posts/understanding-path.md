@@ -1,5 +1,5 @@
 ---
-title: Understanding what PATH is and why we need
+title: Understanding what PATH is and why we need it
 excerpt: A short blog to understand what PATH is, what it's used for, and how to use it in Linux.
 coverImage: /assets/birbs/gygis.jpeg
 birbName: White Tern / Gigis alba
