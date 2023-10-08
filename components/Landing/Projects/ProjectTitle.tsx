@@ -19,6 +19,7 @@ const ProjectTitle = ({ websiteUrl, title, imageSrc, alt }: props) => {
       gap={"20px"}
       justifyContent={{ base: "initial", lg: "space-between" }}
       alignItems={"center"}
+      cursor={websiteUrl ? "pointer" : undefined}
     >
       <Heading
         mt={{ "2xl": "0px", base: "0px" }}

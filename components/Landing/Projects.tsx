@@ -4,7 +4,7 @@ import ProjectJurumi from "./Projects/ProjectJurumi";
 import ProjectAfuApp from "./Projects/ProjectAfuApp";
 import ProjectKuic from "./Projects/ProjectKuic";
 import ProjectOpades from "./Projects/ProjectOpades";
-import ProjectPodSol from "./Projects/ProjectPodSol";
+import ProjectPodcastSolutions from "./Projects/ProjectPodcastSolutions";
 
 const Projects = () => {
   return (
@@ -13,16 +13,16 @@ const Projects = () => {
         fontSize={{ base: "2.5rem", md: "4rem" }}
         mt={{ base: "40px", md: "100px" }}
         mb={{ base: "40px", md: "20px" }}
-        textDecor={"underline"}
+        /* textDecor={"underline"} */
         textDecorationThickness="from-font"
-        letterSpacing={"0.5rem"}
+        /* letterSpacing={"0.5rem"} */
       >
-        SELECTED WORK
+        My Recent Work:
       </Text>
       <Stack spacing={40}>
-        <ProjectPodSol />
-        <ProjectJurumi />
+        <ProjectPodcastSolutions />
         <ProjectAfuApp />
+        <ProjectJurumi />
         <ProjectKuic />
         <ProjectOpades />
       </Stack>

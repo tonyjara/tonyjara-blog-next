@@ -2,7 +2,6 @@ import {
   Flex,
   Text,
   Box,
-  Heading,
   Button,
   Icon,
   useBreakpointValue,
@@ -27,6 +26,29 @@ const ProjectJurumi = () => {
       justifyContent={{ md: "space-between", base: "center" }}
       gap={{ lg: "100px", base: "30px" }}
     >
+      <Box
+        as={Link}
+        href={websiteUrl}
+        target="_blank"
+        hideBelow={"lg"}
+        borderRadius={"10px"}
+        flex={"2 0 0px"}
+        flexDir={"column"}
+      >
+        <Image
+          priority
+          src={"/assets/projects/mockup-jurumi.jpg"}
+          style={{
+            borderRadius: "10px",
+            objectFit: "cover",
+            objectPosition: "0% 5%",
+            maxHeight: "700px",
+          }}
+          width={1000}
+          height={1000}
+          alt="Group of people using the Jurumi software"
+        />
+      </Box>
       <Box flex={"1 0 0px"} justifyItems={"center"}>
         <Box>
           <ProjectTitle
@@ -61,18 +83,21 @@ const ProjectJurumi = () => {
           </Box>
 
           <Text mt={"20px"} fontSize={"xl"}>
-            Open-sourced administrative software built to handle a local
-            non-profit projects and memberships management. <br />
-            <br /> Designed and implemented structured processes for employees
-            to execute project tasks consecutively, notifying team members and
-            integrating with existing protocols.
+            Managing projects, donations and memberships for non-profits is no
+            joke, it requires the synchronization of a lot of people and
+            processes. That&apos;s what Jurumi does. <br />
             <br />
-            <br /> Established reliable systems to store and search invoices and
-            documents based on serverless Azure SQL database PostgreSQL.
+            It offers structured processes for employees to execute project
+            tasks consecutively, notifying team members and integrating with
+            existing protocols while keeping and unmutable history of processes
+            to allow for external auditing. <br />
+            <br /> It&apos;s complemented with a documentation page (
+            https://docs.opades.org.py ) with video tutorials for users to learn
+            how to use the software. <br />
             <br />
-            <br />
-            Built and deployed a documentation page ( https://docs.opades.org.py
-            ) with video tutorials for users to learn how to use the software.
+            <span style={{ fontWeight: "bold" }}>
+              It&apos;s also open source{" "}
+            </span>
           </Text>
         </Box>
         <Box
@@ -107,29 +132,6 @@ const ProjectJurumi = () => {
             Documentation{" "}
           </Button>
         </Box>
-      </Box>
-      <Box
-        as={Link}
-        href={websiteUrl}
-        target="_blank"
-        hideBelow={"lg"}
-        borderRadius={"10px"}
-        flex={"2 0 0px"}
-        flexDir={"column"}
-      >
-        <Image
-          priority
-          src={"/assets/projects/mockup-jurumi.jpg"}
-          style={{
-            borderRadius: "10px",
-            objectFit: "cover",
-            objectPosition: "0% 5%",
-            maxHeight: "700px",
-          }}
-          width={1000}
-          height={1000}
-          alt="Group of people using the Jurumi software"
-        />
       </Box>
     </Flex>
   );

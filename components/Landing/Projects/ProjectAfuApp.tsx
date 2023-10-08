@@ -1,4 +1,4 @@
-import { Flex, Text, Box, Heading, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Text, Box, useBreakpointValue } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import ProjectTitle from "./ProjectTitle";
@@ -15,25 +15,6 @@ const ProjectAfuApp = () => {
       justifyContent={{ md: "space-between", base: "center" }}
       gap={{ lg: "100px", base: "30px" }}
     >
-      <Box
-        hideBelow={"lg"}
-        borderRadius={"10px"}
-        flex={"2 0 0px"}
-        flexDir={"column"}
-      >
-        <Image
-          src={"/assets/projects/velvet-rope.webp"}
-          style={{
-            borderRadius: "10px",
-            objectFit: "cover",
-            objectPosition: "0% 5%",
-            maxHeight: "700px",
-          }}
-          width={1000}
-          height={1000}
-          alt="Security guard in front of bar"
-        />
-      </Box>
       <Box flex={"1 0 0px"} justifyItems={"center"}>
         <Box>
           <ProjectTitle
@@ -58,19 +39,39 @@ const ProjectAfuApp = () => {
           </Box>
 
           <Text mt={"20px"} fontSize={"xl"}>
-            Web-based, single-page application built for handling a nightclub’s
-            customer database, capacity flow, VIP invitations, ticket pricing,
-            and event scheduling. <br />
-            <br /> Implemented role-based access schema according to each
-            employees’ access levels.
+            Web app built for clubs that manages, in real-time, ticket prices,
+            invitations, events, free-passes, reserves, ticket printing, reports
+            and more.
             <br />
-            <br /> Created an electron app that bridges the browser with a
-            ticket printer. The tickets printed serve as tangible proof of
-            purchase to the customers. <br />
-            <br /> Have registered over 20.000 individual customers with average
-            daily traffic of 400 customers.
+            <br />
+            The app is deployed in production in 2 different clubs. To this day
+            it has registered over 30.000 individual customers, with a combined
+            average monthly traffic of over 20.000 customers.
+            <br />
+            <br />
+            It was custom built for a growing franchise of nightclubs. The
+            monthly maintanence cost for the app is under $5.
           </Text>
         </Box>
+      </Box>
+      <Box
+        hideBelow={"lg"}
+        borderRadius={"10px"}
+        flex={"2 0 0px"}
+        flexDir={"column"}
+      >
+        <Image
+          src={"/assets/projects/velvet-rope.webp"}
+          style={{
+            borderRadius: "10px",
+            objectFit: "cover",
+            objectPosition: "0% 5%",
+            maxHeight: "700px",
+          }}
+          width={1000}
+          height={1000}
+          alt="Security guard in front of bar"
+        />
       </Box>
     </Flex>
   );

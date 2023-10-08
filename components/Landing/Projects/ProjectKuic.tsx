@@ -32,6 +32,7 @@ const ProjectKuic = () => {
             hideFrom={"lg"}
             borderRadius={"10px"}
             my="40px"
+            cursor={"pointer"}
           >
             <Image
               src={"/assets/projects/kuic-mockup.jpg"}
@@ -48,6 +49,8 @@ const ProjectKuic = () => {
           </Box>
 
           <Text mt={"20px"} fontSize={"xl"}>
+            I built this for my mom. And then it turned into a business.
+            <br /> <br />
             App built for Paraguayan small business owners’ inventory and sales
             needs. <br />
             <br /> Created with React and Firebase, providing real-time updates

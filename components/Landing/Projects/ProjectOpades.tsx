@@ -1,10 +1,12 @@
-import { Flex, Text, Box, Heading, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Text, Box, useBreakpointValue } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
 import ProjectTitle from "./ProjectTitle";
+import Link from "next/link";
 
 const ProjectOpades = () => {
   const mdImageBreakPoints = useBreakpointValue({ base: "200px", md: "400px" });
+  const websiteUrl = "https://opades.org.py";
 
   return (
     <Flex
@@ -16,6 +18,9 @@ const ProjectOpades = () => {
       gap={{ lg: "100px", base: "30px" }}
     >
       <Box
+        as={Link}
+        href={websiteUrl}
+        cursor={"pointer"}
         hideBelow={"lg"}
         borderRadius={"10px"}
         flex={"2 0 0px"}
@@ -40,9 +45,18 @@ const ProjectOpades = () => {
             title="OPADES"
             alt="logo for nonprofit organization OPADES"
             imageSrc="/assets/projects/opadeslogo.png"
+            websiteUrl={websiteUrl}
           />
 
-          <Box maxH={"400px"} hideFrom={"lg"} borderRadius={"10px"} my="40px">
+          <Box
+            as={Link}
+            href={websiteUrl}
+            cursor={"pointer"}
+            maxH={"400px"}
+            hideFrom={"lg"}
+            borderRadius={"10px"}
+            my="40px"
+          >
             <Image
               src={"/assets/projects/opades-monke.jpeg"}
               style={{
@@ -58,14 +72,18 @@ const ProjectOpades = () => {
           </Box>
 
           <Text mt={"20px"} fontSize={"xl"}>
-            Local NGO’s main website built in NextJs, serving static assets
-            rendered through ROWY, CRM built on top of firebase to quickly and
-            easily upload changes to the website. <br />
-            <br /> Blogs and news articles with SEO, easily accesible and
-            editable for anyone in the organization. <br />
+            OPADES is my favorite NGO in Paraguay, they have a lot of projects
+            related to conservation and education. I&apos;m proud to be able to
+            help them through my work.
             <br />
-            Integration with JOTFORMS and Sendgrid to manage feedback from
-            members and volunteers.
+            <br /> This is their landing page, it&apos;s updated through ROWY, a
+            CRM built on top of firebase, this enables the team to quickly and
+            easily upload changes to the website. <br />
+            <br />I used NextJs and everything is staticly rendered, so blogs
+            and news articles have excellent SEO. <br />
+            <br />
+            Other integrations include with JOTFORMS and Sendgrid to manage
+            feedback from members and volunteers.
           </Text>
         </Box>
       </Box>

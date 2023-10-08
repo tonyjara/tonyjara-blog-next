@@ -10,11 +10,10 @@ import {
 } from "@chakra-ui/react";
 import Image from "next/image";
 import React from "react";
-import ProjectTitle from "./ProjectTitle";
 import Link from "next/link";
 import { CgLoadbarDoc } from "react-icons/cg";
 
-const ProjectPodSol = () => {
+const ProjectPodcastSolutions = () => {
   const mdImageBreakPoints = useBreakpointValue({ base: "200px", md: "400px" });
   const colorMode = useColorMode().colorMode;
   const smImageSize = useBreakpointValue({ base: 50, md: 70 });
@@ -29,6 +28,7 @@ const ProjectPodSol = () => {
       justifyContent={{ md: "space-between", base: "center" }}
       gap={{ lg: "100px", base: "30px" }}
     >
+      {/* INFO: Big pic */}
       <Box
         as={Link}
         href={websiteUrl}
@@ -60,6 +60,7 @@ const ProjectPodSol = () => {
             gap={"20px"}
             justifyContent={{ base: "initial", lg: "space-between" }}
             alignItems={"center"}
+            cursor={"pointer"}
           >
             <Heading
               mt={{ "2xl": "0px", base: "0px" }}
@@ -108,12 +109,18 @@ const ProjectPodSol = () => {
           </Box>
 
           <Text mt={"20px"} fontSize={"xl"}>
-            Web platform for podcasters to host and manage their podcasts.
+            I love podcasts and I always wanted to really understand the whole
+            process of how they work. That&apos;s why I built Podcasts
+            Solutions.
             <br />
             <br />
-            Offers audio to text transcription as well as AI content generation
-            and a suite of tools to make managing your podcast as easy as
-            possible.
+            It&apos;s a Web platform for podcasters to host and manage their
+            podcasts.
+            <br />
+            <br />
+            It offers audio to text transcription as well as AI content
+            generation and a suite of tools to make managing your podcast as
+            easy as possible.
             <br />
             <br />
             It offers a free trial as well as a paid subscription model
@@ -145,4 +152,4 @@ const ProjectPodSol = () => {
   );
 };
 
-export default ProjectPodSol;
+export default ProjectPodcastSolutions;
