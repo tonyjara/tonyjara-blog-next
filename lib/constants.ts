@@ -1,10 +1,12 @@
 export const socialMediaLinks = {
-  instagram: "https://www.instagram.com/tonyjara/",
-  twitter: "https://twitter.com/nytoraja",
-  youtube: "https://www.youtube.com/channel/UCXn9LLq1jcaYBqqKTrt0nfA",
+  instagram: "https://www.instagram.com/tonyjaradev/",
+  twitter: "https://twitter.com/tonyjaradev",
+  youtube: "https://www.youtube.com/@tonyjaradev",
   linkedin: "https://www.linkedin.com/in/tonyjara/",
   github: "https://github.com/tonyjara",
 };
+
+export const contactEmail = "contact@tonyjara.com";
 
 export const repoLink = "https://github.com/tonyjara/tonyjara-blog-next";
 

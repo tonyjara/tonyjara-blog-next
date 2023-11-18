@@ -430,4 +430,4 @@ Testing this way solves a lot of problems. The one caveat to this approach is th
 
 Hope this was useful and if you wish just [clone the repo](https://github.com/tonyjara/tuto-pg-typescript-nextjs).
 
-### If you want to contact me hit me up on <a href="https://twitter.com/nytoraja" target="_blank">Twitter</a>
+### If you want to contact me hit me up on <a href="https://twitter.com/tonyjaradev" target="_blank">Twitter</a>

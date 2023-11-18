@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
-import { socialMediaLinks } from "../../lib/constants";
+import { contactEmail, socialMediaLinks } from "../../lib/constants";
 import { FiMail } from "react-icons/fi";
 import { leafColors } from "../../styles/theme";
 
@@ -20,7 +20,7 @@ const ContactButtons = () => {
 
   const accentColor = useColorModeValue(
     leafColors.accentLight,
-    leafColors.accentDark
+    leafColors.accentDark,
   );
   return (
     <>
@@ -46,12 +46,12 @@ const ContactButtons = () => {
         <Button
           as={Link}
           target="_blank"
-          href={"mailto:nytojara@gmail.com"}
+          href={`mailto:${contactEmail}`}
           leftIcon={<Icon color={accentColor} fontSize={"xl"} as={FiMail} />}
           fontSize={"xl"}
           variant={"ghost"}
         >
-          nytojara@gmail.com
+          {contactEmail}
         </Button>
         <Button
           as={Link}
@@ -80,7 +80,7 @@ const ContactButtons = () => {
           />
         </Link>
 
-        <Link target="_blank" href={"mailto:nytojara@gmail.com"}>
+        <Link target="_blank" href={`mailto:${contactEmail}`}>
           <Icon
             color={isDark ? "#FFFF" : "#000"}
             fontSize={{ base: "3xl", md: "4xl" }}

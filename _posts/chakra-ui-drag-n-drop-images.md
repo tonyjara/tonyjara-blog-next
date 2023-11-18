@@ -27,4 +27,4 @@ Install [Chakra-ui](https://chakra-ui.com/getting-started), [React-dropzone](htt
   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
 
-### If you want to contact me hit me up on <a href="https://twitter.com/nytoraja" target="_blank">Twitter</a>
+### If you want to contact me hit me up on <a href="https://twitter.com/tonyjaradev" target="_blank">Twitter</a>
